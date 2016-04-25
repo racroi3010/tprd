@@ -1,0 +1,898 @@
+android.support.v4.app.BackStackState
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.BaseFragmentActivityDonut: BaseFragmentActivityDonut()
+android.support.v4.app.BaseFragmentActivityHoneycomb: BaseFragmentActivityHoneycomb()
+android.support.v4.app.Fragment$SavedState
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentActivity
+android.support.v4.app.FragmentActivity: FragmentActivity()
+android.support.v4.app.FragmentManagerState
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentTabHost
+android.support.v4.app.FragmentTabHost: FragmentTabHost(android.content.Context,android.util.AttributeSet)
+android.support.v4.app.FragmentTabHost$SavedState
+android.support.v4.app.FragmentTabHost$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.NotificationCompatSideChannelService
+android.support.v4.content.FileProvider
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.content.WakefulBroadcastReceiver
+android.support.v4.media.MediaBrowserCompat$MediaBrowserImplBase$3
+android.support.v4.media.MediaBrowserCompat$MediaItem
+android.support.v4.media.MediaBrowserCompat$MediaItem: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.MediaBrowserServiceCompat
+android.support.v4.media.MediaDescriptionCompat
+android.support.v4.media.MediaDescriptionCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.MediaMetadataCompat
+android.support.v4.media.MediaMetadataCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.RatingCompat
+android.support.v4.media.RatingCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaButtonReceiver
+android.support.v4.media.session.MediaSessionCompat$QueueItem
+android.support.v4.media.session.MediaSessionCompat$QueueItem: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper
+android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaSessionCompat$Token
+android.support.v4.media.session.MediaSessionCompat$Token: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.ParcelableVolumeInfo
+android.support.v4.media.session.ParcelableVolumeInfo: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.PlaybackStateCompat
+android.support.v4.media.session.PlaybackStateCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.PlaybackStateCompat$CustomAction
+android.support.v4.media.session.PlaybackStateCompat$CustomAction: android.os.Parcelable$Creator CREATOR
+android.support.v4.os.ResultReceiver
+android.support.v4.os.ResultReceiver: android.os.Parcelable$Creator CREATOR
+android.support.v4.view.PagerTabStrip
+android.support.v4.view.PagerTabStrip: PagerTabStrip(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.PagerTabStrip$1: void onClick(android.view.View)
+android.support.v4.view.PagerTabStrip$2: void onClick(android.view.View)
+android.support.v4.view.PagerTitleStrip
+android.support.v4.view.PagerTitleStrip: PagerTitleStrip(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager
+android.support.v4.view.ViewPager: ViewPager(android.content.Context)
+android.support.v4.view.ViewPager: ViewPager(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager$LayoutParams
+android.support.v4.view.ViewPager$LayoutParams: ViewPager$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.ContentLoadingProgressBar
+android.support.v4.widget.ContentLoadingProgressBar: ContentLoadingProgressBar(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.DrawerLayout
+android.support.v4.widget.DrawerLayout: DrawerLayout(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.DrawerLayout: DrawerLayout(android.content.Context,android.util.AttributeSet,int)
+android.support.v4.widget.DrawerLayout$LayoutParams
+android.support.v4.widget.DrawerLayout$LayoutParams: DrawerLayout$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.DrawerLayout$SavedState
+android.support.v4.widget.DrawerLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.NestedScrollView
+android.support.v4.widget.NestedScrollView: NestedScrollView(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.NestedScrollView: NestedScrollView(android.content.Context,android.util.AttributeSet,int)
+android.support.v4.widget.NestedScrollView$SavedState
+android.support.v4.widget.NestedScrollView$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SlidingPaneLayout
+android.support.v4.widget.SlidingPaneLayout: SlidingPaneLayout(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.SlidingPaneLayout: SlidingPaneLayout(android.content.Context,android.util.AttributeSet,int)
+android.support.v4.widget.SlidingPaneLayout$LayoutParams
+android.support.v4.widget.SlidingPaneLayout$LayoutParams: SlidingPaneLayout$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.SlidingPaneLayout$SavedState
+android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.Space
+android.support.v4.widget.Space: Space(android.content.Context,android.util.AttributeSet,int)
+android.support.v4.widget.Space: Space(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.SwipeRefreshLayout
+android.support.v4.widget.SwipeRefreshLayout: SwipeRefreshLayout(android.content.Context,android.util.AttributeSet)
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender valueOf(java.lang.String)
+com.google.ads.mediation.AdUrlAdapter
+com.google.ads.mediation.MediationBannerListener: void onClick(com.google.ads.mediation.MediationBannerAdapter)
+com.google.ads.mediation.admob.AdMobAdapter
+com.google.ads.mediation.customevent.CustomEventAdapter
+com.google.ads.mediation.customevent.CustomEventAdapter$zza: void onClick()
+com.google.ads.mediation.customevent.CustomEventBannerListener: void onClick()
+com.google.android.gms.ads.AdActivity
+com.google.android.gms.ads.AdActivity: AdActivity()
+com.google.android.gms.ads.AdView
+com.google.android.gms.ads.AdView: AdView(android.content.Context)
+com.google.android.gms.ads.AdView: AdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.AdView: AdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.BaseAdView
+com.google.android.gms.ads.BaseAdView: BaseAdView(android.content.Context,int)
+com.google.android.gms.ads.BaseAdView: BaseAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.BaseAdView: BaseAdView(android.content.Context,android.util.AttributeSet,int,int)
+com.google.android.gms.ads.NativeExpressAdView
+com.google.android.gms.ads.NativeExpressAdView: NativeExpressAdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.NativeExpressAdView: NativeExpressAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.doubleclick.PublisherAdView
+com.google.android.gms.ads.doubleclick.PublisherAdView: PublisherAdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.doubleclick.PublisherAdView: PublisherAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.formats.NativeAdView
+com.google.android.gms.ads.formats.NativeAdView: NativeAdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.formats.NativeAdView: NativeAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.formats.NativeAppInstallAdView
+com.google.android.gms.ads.formats.NativeAppInstallAdView: NativeAppInstallAdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.formats.NativeAppInstallAdView: NativeAppInstallAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.formats.NativeContentAdView
+com.google.android.gms.ads.formats.NativeContentAdView: NativeContentAdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.formats.NativeContentAdView: NativeContentAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.ads.internal.InterstitialAdParameterParcel
+com.google.android.gms.ads.internal.InterstitialAdParameterParcel: com.google.android.gms.ads.internal.zzl CREATOR
+com.google.android.gms.ads.internal.client.AdRequestParcel
+com.google.android.gms.ads.internal.client.AdRequestParcel: com.google.android.gms.ads.internal.client.zzg CREATOR
+com.google.android.gms.ads.internal.client.AdSizeParcel
+com.google.android.gms.ads.internal.client.AdSizeParcel: com.google.android.gms.ads.internal.client.zzi CREATOR
+com.google.android.gms.ads.internal.client.SearchAdRequestParcel
+com.google.android.gms.ads.internal.client.SearchAdRequestParcel: com.google.android.gms.ads.internal.client.zzam CREATOR
+com.google.android.gms.ads.internal.client.ThinAdSizeParcel
+com.google.android.gms.ads.internal.client.zzk
+com.google.android.gms.ads.internal.client.zzk: zzk(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.internal.formats.NativeAdOptionsParcel
+com.google.android.gms.ads.internal.formats.NativeAdOptionsParcel: com.google.android.gms.ads.internal.formats.zzj CREATOR
+com.google.android.gms.ads.internal.formats.zzk: void onClick(android.view.View)
+com.google.android.gms.ads.internal.overlay.AdLauncherIntentInfoParcel
+com.google.android.gms.ads.internal.overlay.AdLauncherIntentInfoParcel: com.google.android.gms.ads.internal.overlay.zzb CREATOR
+com.google.android.gms.ads.internal.overlay.AdOverlayInfoParcel
+com.google.android.gms.ads.internal.overlay.AdOverlayInfoParcel: com.google.android.gms.ads.internal.overlay.zzf CREATOR
+com.google.android.gms.ads.internal.overlay.zzo: void onClick(android.view.View)
+com.google.android.gms.ads.internal.purchase.GInAppPurchaseManagerInfoParcel
+com.google.android.gms.ads.internal.purchase.GInAppPurchaseManagerInfoParcel: com.google.android.gms.ads.internal.purchase.zza CREATOR
+com.google.android.gms.ads.internal.request.AdRequestInfoParcel
+com.google.android.gms.ads.internal.request.AdRequestInfoParcel: com.google.android.gms.ads.internal.request.zzf CREATOR
+com.google.android.gms.ads.internal.request.AdResponseParcel
+com.google.android.gms.ads.internal.request.AdResponseParcel: com.google.android.gms.ads.internal.request.zzh CREATOR
+com.google.android.gms.ads.internal.request.CapabilityParcel
+com.google.android.gms.ads.internal.request.CapabilityParcel: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.ads.internal.request.LargeParcelTeleporter
+com.google.android.gms.ads.internal.request.LargeParcelTeleporter: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.ads.internal.request.StringParcel
+com.google.android.gms.ads.internal.request.StringParcel: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.ads.internal.reward.client.RewardedVideoAdRequestParcel
+com.google.android.gms.ads.internal.reward.client.RewardedVideoAdRequestParcel: com.google.android.gms.ads.internal.reward.client.zzh CREATOR
+com.google.android.gms.ads.internal.reward.mediation.client.RewardItemParcel
+com.google.android.gms.ads.internal.reward.mediation.client.RewardItemParcel: com.google.android.gms.ads.internal.reward.mediation.client.zzc CREATOR
+com.google.android.gms.ads.internal.util.client.VersionInfoParcel
+com.google.android.gms.ads.internal.util.client.VersionInfoParcel: com.google.android.gms.ads.internal.util.client.zzc CREATOR
+com.google.android.gms.ads.internal.zzc$3$2: void onClick(android.view.View)
+com.google.android.gms.ads.internal.zzf$zza: void onClick()
+com.google.android.gms.ads.mediation.customevent.CustomEventAdapter
+com.google.android.gms.ads.purchase.InAppPurchaseActivity
+com.google.android.gms.ads.search.SearchAdView
+com.google.android.gms.ads.search.SearchAdView: SearchAdView(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.ads.search.SearchAdView: SearchAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.common.ConnectionResult
+com.google.android.gms.common.ConnectionResult: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.SignInButton
+com.google.android.gms.common.SignInButton: SignInButton(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.common.SignInButton: SignInButton(android.content.Context,android.util.AttributeSet,int)
+com.google.android.gms.common.SignInButton: void onClick(android.view.View)
+com.google.android.gms.common.api.Scope
+com.google.android.gms.common.api.Scope: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.api.Status
+com.google.android.gms.common.api.Status: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.api.internal.SupportLifecycleFragmentImpl
+com.google.android.gms.common.data.BitmapTeleporter
+com.google.android.gms.common.data.BitmapTeleporter: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.data.DataHolder
+com.google.android.gms.common.data.DataHolder: com.google.android.gms.common.data.zze CREATOR
+com.google.android.gms.common.images.ImageManager$ImageReceiver
+com.google.android.gms.common.images.WebImage
+com.google.android.gms.common.images.WebImage: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.AuthAccountRequest
+com.google.android.gms.common.internal.AuthAccountRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.BinderWrapper
+com.google.android.gms.common.internal.BinderWrapper: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.DowngradeableSafeParcel
+com.google.android.gms.common.internal.GetServiceRequest
+com.google.android.gms.common.internal.GetServiceRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.ResolveAccountRequest
+com.google.android.gms.common.internal.ResolveAccountRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.ResolveAccountResponse
+com.google.android.gms.common.internal.ResolveAccountResponse: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.SignInButtonConfig
+com.google.android.gms.common.internal.SignInButtonConfig: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.ValidateAccountRequest
+com.google.android.gms.common.internal.ValidateAccountRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.internal.safeparcel.SafeParcelable
+com.google.android.gms.common.internal.safeparcel.SafeParcelable: java.lang.String NULL
+com.google.android.gms.common.internal.zzac
+com.google.android.gms.common.internal.zzac: zzac(android.content.Context,android.util.AttributeSet)
+com.google.android.gms.common.internal.zzh: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.common.server.FavaDiagnosticsEntity
+com.google.android.gms.common.server.FavaDiagnosticsEntity: com.google.android.gms.common.server.zza CREATOR
+com.google.android.gms.common.server.converter.ConverterWrapper
+com.google.android.gms.common.server.converter.ConverterWrapper: com.google.android.gms.common.server.converter.zza CREATOR
+com.google.android.gms.common.server.converter.StringToIntConverter
+com.google.android.gms.common.server.converter.StringToIntConverter: com.google.android.gms.common.server.converter.zzb CREATOR
+com.google.android.gms.common.server.converter.StringToIntConverter$Entry
+com.google.android.gms.common.server.converter.StringToIntConverter$Entry: com.google.android.gms.common.server.converter.zzc CREATOR
+com.google.android.gms.common.server.response.FastJsonResponse$Field
+com.google.android.gms.common.server.response.FastJsonResponse$Field: com.google.android.gms.common.server.response.zza CREATOR
+com.google.android.gms.common.server.response.FastSafeParcelableJsonResponse
+com.google.android.gms.common.server.response.FieldMappingDictionary
+com.google.android.gms.common.server.response.FieldMappingDictionary: com.google.android.gms.common.server.response.zzc CREATOR
+com.google.android.gms.common.server.response.FieldMappingDictionary$Entry
+com.google.android.gms.common.server.response.FieldMappingDictionary$Entry: com.google.android.gms.common.server.response.zzd CREATOR
+com.google.android.gms.common.server.response.FieldMappingDictionary$FieldMapPair
+com.google.android.gms.common.server.response.FieldMappingDictionary$FieldMapPair: com.google.android.gms.common.server.response.zzb CREATOR
+com.google.android.gms.common.server.response.SafeParcelResponse
+com.google.android.gms.common.server.response.SafeParcelResponse: com.google.android.gms.common.server.response.zze CREATOR
+com.google.android.gms.common.stats.ConnectionEvent
+com.google.android.gms.common.stats.ConnectionEvent: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.common.stats.WakeLockEvent
+com.google.android.gms.common.stats.WakeLockEvent: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.dynamic.zza$5: void onClick(android.view.View)
+com.google.android.gms.internal.zzad: com.google.android.gms.internal.zzad[] values()
+com.google.android.gms.internal.zzad: com.google.android.gms.internal.zzad valueOf(java.lang.String)
+com.google.android.gms.internal.zzae: com.google.android.gms.internal.zzae[] values()
+com.google.android.gms.internal.zzae: com.google.android.gms.internal.zzae valueOf(java.lang.String)
+com.google.android.gms.internal.zzfk: void onClick(com.google.ads.mediation.MediationBannerAdapter)
+com.google.android.gms.internal.zzfm$1: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzfm$2: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzfn$1: void onClick(android.view.View)
+com.google.android.gms.internal.zzfp$1: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzfp$2: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zziu$1: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zziu$2: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzjv$2: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzjv$3: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzjv$5: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzjv$6: void onClick(android.content.DialogInterface,int)
+com.google.android.gms.internal.zzk$zza: com.google.android.gms.internal.zzk$zza[] values()
+com.google.android.gms.internal.zzk$zza: com.google.android.gms.internal.zzk$zza valueOf(java.lang.String)
+com.google.android.gms.internal.zznu$zza: com.google.android.gms.internal.zznu$zza[] values()
+com.google.android.gms.internal.zznu$zza: com.google.android.gms.internal.zznu$zza valueOf(java.lang.String)
+com.hanaone.jni.JNIHanaone
+com.hanaone.jni.JNIHanaone: java.lang.String stringFromJNI()
+com.hanaone.media.AudioControllerView
+com.hanaone.media.AudioControllerView: AudioControllerView(android.content.Context,android.util.AttributeSet)
+com.hanaone.media.AudioControllerView$1: void onClick(android.view.View)
+com.hanaone.media.AudioControllerView$2: void onClick(android.view.View)
+com.hanaone.media.AudioControllerView$4: void onClick(android.view.View)
+com.hanaone.media.AudioControllerView$5: void onClick(android.view.View)
+com.hanaone.tplt.HelpActivity
+com.hanaone.tplt.HelpActivity: HelpActivity()
+com.hanaone.tplt.HelpActivity: void onClick(android.view.View)
+com.hanaone.tplt.MainActivity
+com.hanaone.tplt.MainActivity: MainActivity()
+com.hanaone.tplt.MainActivity: void onClick(android.view.View)
+com.hanaone.tplt.MainActivity$2: void onClick(android.view.View)
+com.hanaone.tplt.MainActivity$3: void onClick(android.view.View)
+com.hanaone.tplt.MainActivity$4: void onClick(android.view.View)
+com.hanaone.tplt.QuestionActivity
+com.hanaone.tplt.QuestionActivity: QuestionActivity()
+com.hanaone.tplt.QuestionActivity: void onClick(android.view.View)
+com.hanaone.tplt.QuestionActivity$4: void onClick(android.view.View)
+com.hanaone.tplt.QuestionActivity$5: void onClick(android.view.View)
+com.hanaone.tplt.QuestionActivity$6: void onClick(android.view.View)
+com.hanaone.tplt.QuestionSlideFragment$1: void onClick(android.view.View)
+com.hanaone.tplt.QuestionSlideFragment$2: void onClick(android.view.View)
+com.hanaone.tplt.QuestionSlideFragment$3: void onClick(android.view.View)
+com.hanaone.tplt.QuestionSlideFragment$4: void onClick(android.view.View)
+com.hanaone.tplt.QuestionSlideFragment$5: void onClick(android.view.View)
+com.hanaone.tplt.ResultActivity
+com.hanaone.tplt.ResultActivity: ResultActivity()
+com.hanaone.tplt.ResultActivity: void onClick(android.view.View)
+com.hanaone.tplt.ResultActivity$5: void onClick(android.view.View)
+com.hanaone.tplt.SelectionActivity
+com.hanaone.tplt.SelectionActivity: SelectionActivity()
+com.hanaone.tplt.SelectionActivity: void onClick(android.view.View)
+com.hanaone.tplt.SelectionActivity$1: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListExamAdapter$2: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListExamAdapter$3: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListExamAdapter$4: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListExamAdapter$5: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListExamAdapter$6: void onClick(android.content.DialogInterface,int)
+com.hanaone.tplt.adapter.ListExamAdapter$7: void onClick(android.content.DialogInterface,int)
+com.hanaone.tplt.adapter.ListExamHeaderAdapter$ExamLevelItem$1: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListExamHeaderAdapter$RowType: com.hanaone.tplt.adapter.ListExamHeaderAdapter$RowType[] values()
+com.hanaone.tplt.adapter.ListExamHeaderAdapter$RowType: com.hanaone.tplt.adapter.ListExamHeaderAdapter$RowType valueOf(java.lang.String)
+com.hanaone.tplt.adapter.ListSectionAdapter$1: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListSectionAdapter$QuestionItem$1: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListSectionAdapter$QuestionItem$2: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListSectionAdapter$QuestionItem$3: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListSectionAdapter$QuestionItem$4: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListSectionAdapter$SectionItem$1: void onClick(android.view.View)
+com.hanaone.tplt.adapter.ListSectionAdapter$SectionItem$2: void onClick(android.view.View)
+com.hanaone.tplt.db.ChoiceDataSet
+com.hanaone.tplt.db.ChoiceDataSet: int id
+com.hanaone.tplt.db.ChoiceDataSet: int number
+com.hanaone.tplt.db.ChoiceDataSet: java.lang.String type
+com.hanaone.tplt.db.ChoiceDataSet: java.lang.String label
+com.hanaone.tplt.db.ChoiceDataSet: java.lang.String content
+com.hanaone.tplt.db.ChoiceDataSet: com.hanaone.tplt.db.FileDataSet img
+com.hanaone.tplt.db.ChoiceDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.ChoiceDataSet: void <clinit>()
+com.hanaone.tplt.db.ChoiceDataSet: ChoiceDataSet()
+com.hanaone.tplt.db.ChoiceDataSet: int getId()
+com.hanaone.tplt.db.ChoiceDataSet: void setId(int)
+com.hanaone.tplt.db.ChoiceDataSet: int getNumber()
+com.hanaone.tplt.db.ChoiceDataSet: void setNumber(int)
+com.hanaone.tplt.db.ChoiceDataSet: java.lang.String getType()
+com.hanaone.tplt.db.ChoiceDataSet: void setType(java.lang.String)
+com.hanaone.tplt.db.ChoiceDataSet: java.lang.String getLabel()
+com.hanaone.tplt.db.ChoiceDataSet: void setLabel(java.lang.String)
+com.hanaone.tplt.db.ChoiceDataSet: java.lang.String getContent()
+com.hanaone.tplt.db.ChoiceDataSet: void setContent(java.lang.String)
+com.hanaone.tplt.db.ChoiceDataSet: com.hanaone.tplt.db.FileDataSet getImg()
+com.hanaone.tplt.db.ChoiceDataSet: void setImg(com.hanaone.tplt.db.FileDataSet)
+com.hanaone.tplt.db.ChoiceDataSet: int describeContents()
+com.hanaone.tplt.db.ChoiceDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.ChoiceDataSet: ChoiceDataSet(android.os.Parcel)
+com.hanaone.tplt.db.ChoiceDataSet: ChoiceDataSet(android.os.Parcel,com.hanaone.tplt.db.ChoiceDataSet)
+com.hanaone.tplt.db.ChoiceDataSet$1
+com.hanaone.tplt.db.ChoiceDataSet$1: ChoiceDataSet$1()
+com.hanaone.tplt.db.ChoiceDataSet$1: com.hanaone.tplt.db.ChoiceDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.ChoiceDataSet$1: com.hanaone.tplt.db.ChoiceDataSet[] newArray(int)
+com.hanaone.tplt.db.ChoiceDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.ChoiceDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.ExamDataSet
+com.hanaone.tplt.db.ExamDataSet: int number
+com.hanaone.tplt.db.ExamDataSet: java.lang.String date
+com.hanaone.tplt.db.ExamDataSet: java.util.List levels
+com.hanaone.tplt.db.ExamDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.ExamDataSet: void <clinit>()
+com.hanaone.tplt.db.ExamDataSet: ExamDataSet()
+com.hanaone.tplt.db.ExamDataSet: int getNumber()
+com.hanaone.tplt.db.ExamDataSet: void setNumber(int)
+com.hanaone.tplt.db.ExamDataSet: java.lang.String getDate()
+com.hanaone.tplt.db.ExamDataSet: void setDate(java.lang.String)
+com.hanaone.tplt.db.ExamDataSet: java.util.List getLevels()
+com.hanaone.tplt.db.ExamDataSet: void setLevels(java.util.List)
+com.hanaone.tplt.db.ExamDataSet: int describeContents()
+com.hanaone.tplt.db.ExamDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.ExamDataSet: ExamDataSet(android.os.Parcel)
+com.hanaone.tplt.db.ExamDataSet: ExamDataSet(android.os.Parcel,com.hanaone.tplt.db.ExamDataSet)
+com.hanaone.tplt.db.ExamDataSet$1
+com.hanaone.tplt.db.ExamDataSet$1: ExamDataSet$1()
+com.hanaone.tplt.db.ExamDataSet$1: com.hanaone.tplt.db.ExamDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.ExamDataSet$1: com.hanaone.tplt.db.ExamDataSet[] newArray(int)
+com.hanaone.tplt.db.ExamDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.ExamDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.FileDataSet
+com.hanaone.tplt.db.FileDataSet: int id
+com.hanaone.tplt.db.FileDataSet: java.lang.String type
+com.hanaone.tplt.db.FileDataSet: java.lang.String name
+com.hanaone.tplt.db.FileDataSet: java.lang.String pathLocal
+com.hanaone.tplt.db.FileDataSet: java.lang.String pathRemote
+com.hanaone.tplt.db.FileDataSet: long size
+com.hanaone.tplt.db.FileDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.FileDataSet: void <clinit>()
+com.hanaone.tplt.db.FileDataSet: FileDataSet()
+com.hanaone.tplt.db.FileDataSet: int getId()
+com.hanaone.tplt.db.FileDataSet: void setId(int)
+com.hanaone.tplt.db.FileDataSet: java.lang.String getType()
+com.hanaone.tplt.db.FileDataSet: void setType(java.lang.String)
+com.hanaone.tplt.db.FileDataSet: java.lang.String getName()
+com.hanaone.tplt.db.FileDataSet: void setName(java.lang.String)
+com.hanaone.tplt.db.FileDataSet: java.lang.String getPathLocal()
+com.hanaone.tplt.db.FileDataSet: void setPathLocal(java.lang.String)
+com.hanaone.tplt.db.FileDataSet: java.lang.String getPathRemote()
+com.hanaone.tplt.db.FileDataSet: void setPathRemote(java.lang.String)
+com.hanaone.tplt.db.FileDataSet: long getSize()
+com.hanaone.tplt.db.FileDataSet: void setSize(long)
+com.hanaone.tplt.db.FileDataSet: int describeContents()
+com.hanaone.tplt.db.FileDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.FileDataSet: FileDataSet(android.os.Parcel)
+com.hanaone.tplt.db.FileDataSet: FileDataSet(android.os.Parcel,com.hanaone.tplt.db.FileDataSet)
+com.hanaone.tplt.db.FileDataSet$1
+com.hanaone.tplt.db.FileDataSet$1: FileDataSet$1()
+com.hanaone.tplt.db.FileDataSet$1: com.hanaone.tplt.db.FileDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.FileDataSet$1: com.hanaone.tplt.db.FileDataSet[] newArray(int)
+com.hanaone.tplt.db.FileDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.FileDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.LevelDataSet
+com.hanaone.tplt.db.LevelDataSet: int id
+com.hanaone.tplt.db.LevelDataSet: int number
+com.hanaone.tplt.db.LevelDataSet: java.lang.String label
+com.hanaone.tplt.db.LevelDataSet: java.util.List sections
+com.hanaone.tplt.db.LevelDataSet: int active
+com.hanaone.tplt.db.LevelDataSet: com.hanaone.tplt.db.FileDataSet txt
+com.hanaone.tplt.db.LevelDataSet: java.util.List audio
+com.hanaone.tplt.db.LevelDataSet: com.hanaone.tplt.db.FileDataSet pdf
+com.hanaone.tplt.db.LevelDataSet: int score
+com.hanaone.tplt.db.LevelDataSet: int maxScore
+com.hanaone.tplt.db.LevelDataSet: int color
+com.hanaone.tplt.db.LevelDataSet: int exam_id
+com.hanaone.tplt.db.LevelDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.LevelDataSet: void <clinit>()
+com.hanaone.tplt.db.LevelDataSet: LevelDataSet()
+com.hanaone.tplt.db.LevelDataSet: int getId()
+com.hanaone.tplt.db.LevelDataSet: void setId(int)
+com.hanaone.tplt.db.LevelDataSet: int getNumber()
+com.hanaone.tplt.db.LevelDataSet: void setNumber(int)
+com.hanaone.tplt.db.LevelDataSet: java.lang.String getLabel()
+com.hanaone.tplt.db.LevelDataSet: void setLabel(java.lang.String)
+com.hanaone.tplt.db.LevelDataSet: java.util.List getSections()
+com.hanaone.tplt.db.LevelDataSet: void setSections(java.util.List)
+com.hanaone.tplt.db.LevelDataSet: int getActive()
+com.hanaone.tplt.db.LevelDataSet: void setActive(int)
+com.hanaone.tplt.db.LevelDataSet: java.util.List getAudio()
+com.hanaone.tplt.db.LevelDataSet: void setAudio(java.util.List)
+com.hanaone.tplt.db.LevelDataSet: com.hanaone.tplt.db.FileDataSet getPdf()
+com.hanaone.tplt.db.LevelDataSet: void setPdf(com.hanaone.tplt.db.FileDataSet)
+com.hanaone.tplt.db.LevelDataSet: com.hanaone.tplt.db.FileDataSet getTxt()
+com.hanaone.tplt.db.LevelDataSet: void setTxt(com.hanaone.tplt.db.FileDataSet)
+com.hanaone.tplt.db.LevelDataSet: int getScore()
+com.hanaone.tplt.db.LevelDataSet: void setScore(int)
+com.hanaone.tplt.db.LevelDataSet: int getMaxScore()
+com.hanaone.tplt.db.LevelDataSet: void setMaxScore(int)
+com.hanaone.tplt.db.LevelDataSet: int getColor()
+com.hanaone.tplt.db.LevelDataSet: void setColor(int)
+com.hanaone.tplt.db.LevelDataSet: int getExam_id()
+com.hanaone.tplt.db.LevelDataSet: void setExam_id(int)
+com.hanaone.tplt.db.LevelDataSet: int describeContents()
+com.hanaone.tplt.db.LevelDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.LevelDataSet: LevelDataSet(android.os.Parcel)
+com.hanaone.tplt.db.LevelDataSet$1
+com.hanaone.tplt.db.LevelDataSet$1: LevelDataSet$1()
+com.hanaone.tplt.db.LevelDataSet$1: com.hanaone.tplt.db.LevelDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.LevelDataSet$1: com.hanaone.tplt.db.LevelDataSet[] newArray(int)
+com.hanaone.tplt.db.LevelDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.LevelDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.QuestionDataSet
+com.hanaone.tplt.db.QuestionDataSet: int id
+com.hanaone.tplt.db.QuestionDataSet: int number
+com.hanaone.tplt.db.QuestionDataSet: int mark
+com.hanaone.tplt.db.QuestionDataSet: java.lang.String text
+com.hanaone.tplt.db.QuestionDataSet: java.util.List choices
+com.hanaone.tplt.db.QuestionDataSet: int answer
+com.hanaone.tplt.db.QuestionDataSet: int choice
+com.hanaone.tplt.db.QuestionDataSet: java.lang.String type
+com.hanaone.tplt.db.QuestionDataSet: java.lang.String hint
+com.hanaone.tplt.db.QuestionDataSet: float startAudio
+com.hanaone.tplt.db.QuestionDataSet: float endAudio
+com.hanaone.tplt.db.QuestionDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.QuestionDataSet: void <clinit>()
+com.hanaone.tplt.db.QuestionDataSet: QuestionDataSet()
+com.hanaone.tplt.db.QuestionDataSet: int getId()
+com.hanaone.tplt.db.QuestionDataSet: void setId(int)
+com.hanaone.tplt.db.QuestionDataSet: int getNumber()
+com.hanaone.tplt.db.QuestionDataSet: void setNumber(int)
+com.hanaone.tplt.db.QuestionDataSet: int getMark()
+com.hanaone.tplt.db.QuestionDataSet: void setMark(int)
+com.hanaone.tplt.db.QuestionDataSet: java.lang.String getText()
+com.hanaone.tplt.db.QuestionDataSet: void setText(java.lang.String)
+com.hanaone.tplt.db.QuestionDataSet: java.util.List getChoices()
+com.hanaone.tplt.db.QuestionDataSet: void setChoices(java.util.List)
+com.hanaone.tplt.db.QuestionDataSet: int getAnswer()
+com.hanaone.tplt.db.QuestionDataSet: void setAnswer(int)
+com.hanaone.tplt.db.QuestionDataSet: java.lang.String getType()
+com.hanaone.tplt.db.QuestionDataSet: void setType(java.lang.String)
+com.hanaone.tplt.db.QuestionDataSet: java.lang.String getHint()
+com.hanaone.tplt.db.QuestionDataSet: void setHint(java.lang.String)
+com.hanaone.tplt.db.QuestionDataSet: int getChoice()
+com.hanaone.tplt.db.QuestionDataSet: void setChoice(int)
+com.hanaone.tplt.db.QuestionDataSet: float getStartAudio()
+com.hanaone.tplt.db.QuestionDataSet: void setStartAudio(float)
+com.hanaone.tplt.db.QuestionDataSet: float getEndAudio()
+com.hanaone.tplt.db.QuestionDataSet: void setEndAudio(float)
+com.hanaone.tplt.db.QuestionDataSet: int describeContents()
+com.hanaone.tplt.db.QuestionDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.QuestionDataSet: QuestionDataSet(android.os.Parcel)
+com.hanaone.tplt.db.QuestionDataSet$1
+com.hanaone.tplt.db.QuestionDataSet$1: QuestionDataSet$1()
+com.hanaone.tplt.db.QuestionDataSet$1: com.hanaone.tplt.db.QuestionDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.QuestionDataSet$1: com.hanaone.tplt.db.QuestionDataSet[] newArray(int)
+com.hanaone.tplt.db.QuestionDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.QuestionDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.ResultDataSet
+com.hanaone.tplt.db.ResultDataSet: int number
+com.hanaone.tplt.db.ResultDataSet: int choice
+com.hanaone.tplt.db.ResultDataSet: int answer
+com.hanaone.tplt.db.ResultDataSet: int score
+com.hanaone.tplt.db.ResultDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.ResultDataSet: void <clinit>()
+com.hanaone.tplt.db.ResultDataSet: ResultDataSet()
+com.hanaone.tplt.db.ResultDataSet: int getNumber()
+com.hanaone.tplt.db.ResultDataSet: void setNumber(int)
+com.hanaone.tplt.db.ResultDataSet: int getChoice()
+com.hanaone.tplt.db.ResultDataSet: void setChoice(int)
+com.hanaone.tplt.db.ResultDataSet: int getAnswer()
+com.hanaone.tplt.db.ResultDataSet: void setAnswer(int)
+com.hanaone.tplt.db.ResultDataSet: int describeContents()
+com.hanaone.tplt.db.ResultDataSet: int getScore()
+com.hanaone.tplt.db.ResultDataSet: void setScore(int)
+com.hanaone.tplt.db.ResultDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.ResultDataSet: ResultDataSet(android.os.Parcel)
+com.hanaone.tplt.db.ResultDataSet: ResultDataSet(android.os.Parcel,com.hanaone.tplt.db.ResultDataSet)
+com.hanaone.tplt.db.ResultDataSet$1
+com.hanaone.tplt.db.ResultDataSet$1: ResultDataSet$1()
+com.hanaone.tplt.db.ResultDataSet$1: com.hanaone.tplt.db.ResultDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.ResultDataSet$1: com.hanaone.tplt.db.ResultDataSet[] newArray(int)
+com.hanaone.tplt.db.ResultDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.ResultDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.SectionDataSet
+com.hanaone.tplt.db.SectionDataSet: int id
+com.hanaone.tplt.db.SectionDataSet: int number
+com.hanaone.tplt.db.SectionDataSet: float startAudio
+com.hanaone.tplt.db.SectionDataSet: float endAudio
+com.hanaone.tplt.db.SectionDataSet: java.lang.String text
+com.hanaone.tplt.db.SectionDataSet: java.lang.String hint
+com.hanaone.tplt.db.SectionDataSet: java.util.List questions
+com.hanaone.tplt.db.SectionDataSet: android.os.Parcelable$Creator CREATOR
+com.hanaone.tplt.db.SectionDataSet: void <clinit>()
+com.hanaone.tplt.db.SectionDataSet: SectionDataSet()
+com.hanaone.tplt.db.SectionDataSet: int getId()
+com.hanaone.tplt.db.SectionDataSet: void setId(int)
+com.hanaone.tplt.db.SectionDataSet: int getNumber()
+com.hanaone.tplt.db.SectionDataSet: void setNumber(int)
+com.hanaone.tplt.db.SectionDataSet: float getStartAudio()
+com.hanaone.tplt.db.SectionDataSet: void setStartAudio(float)
+com.hanaone.tplt.db.SectionDataSet: float getEndAudio()
+com.hanaone.tplt.db.SectionDataSet: void setEndAudio(float)
+com.hanaone.tplt.db.SectionDataSet: java.lang.String getText()
+com.hanaone.tplt.db.SectionDataSet: void setText(java.lang.String)
+com.hanaone.tplt.db.SectionDataSet: java.util.List getQuestions()
+com.hanaone.tplt.db.SectionDataSet: void setQuestions(java.util.List)
+com.hanaone.tplt.db.SectionDataSet: java.lang.String getHint()
+com.hanaone.tplt.db.SectionDataSet: void setHint(java.lang.String)
+com.hanaone.tplt.db.SectionDataSet: int describeContents()
+com.hanaone.tplt.db.SectionDataSet: void writeToParcel(android.os.Parcel,int)
+com.hanaone.tplt.db.SectionDataSet: SectionDataSet(android.os.Parcel)
+com.hanaone.tplt.db.SectionDataSet$1
+com.hanaone.tplt.db.SectionDataSet$1: SectionDataSet$1()
+com.hanaone.tplt.db.SectionDataSet$1: com.hanaone.tplt.db.SectionDataSet createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.SectionDataSet$1: com.hanaone.tplt.db.SectionDataSet[] newArray(int)
+com.hanaone.tplt.db.SectionDataSet$1: java.lang.Object createFromParcel(android.os.Parcel)
+com.hanaone.tplt.db.SectionDataSet$1: java.lang.Object[] newArray(int)
+com.hanaone.tplt.db.model.Choice: int id
+com.hanaone.tplt.db.model.Choice: int number
+com.hanaone.tplt.db.model.Choice: java.lang.String type
+com.hanaone.tplt.db.model.Choice: java.lang.String label
+com.hanaone.tplt.db.model.Choice: java.lang.String content
+com.hanaone.tplt.db.model.Choice: int file_id
+com.hanaone.tplt.db.model.Choice: int question_id
+com.hanaone.tplt.db.model.Choice: Choice()
+com.hanaone.tplt.db.model.Choice: int getId()
+com.hanaone.tplt.db.model.Choice: void setId(int)
+com.hanaone.tplt.db.model.Choice: int getNumber()
+com.hanaone.tplt.db.model.Choice: void setNumber(int)
+com.hanaone.tplt.db.model.Choice: java.lang.String getType()
+com.hanaone.tplt.db.model.Choice: void setType(java.lang.String)
+com.hanaone.tplt.db.model.Choice: java.lang.String getLabel()
+com.hanaone.tplt.db.model.Choice: void setLabel(java.lang.String)
+com.hanaone.tplt.db.model.Choice: java.lang.String getContent()
+com.hanaone.tplt.db.model.Choice: void setContent(java.lang.String)
+com.hanaone.tplt.db.model.Choice: int getFile_id()
+com.hanaone.tplt.db.model.Choice: void setFile_id(int)
+com.hanaone.tplt.db.model.Choice: int getQuestion_id()
+com.hanaone.tplt.db.model.Choice: void setQuestion_id(int)
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String TABLE_NAME
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String COLUMN_NAME_NUMBER
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String COLUMN_NAME_TYPE
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String COLUMN_NAME_LABEL
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String COLUMN_NAME_CONTENT
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String COLUMN_FILE_ID
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: java.lang.String COLUMN_QUESTION_ID
+com.hanaone.tplt.db.model.Choice$ChoiceEntry: Choice$ChoiceEntry()
+com.hanaone.tplt.db.model.ExamLevel: int id
+com.hanaone.tplt.db.model.ExamLevel: int exam_id
+com.hanaone.tplt.db.model.ExamLevel: int number
+com.hanaone.tplt.db.model.ExamLevel: java.lang.String label
+com.hanaone.tplt.db.model.ExamLevel: int audio_id
+com.hanaone.tplt.db.model.ExamLevel: int pdf_id
+com.hanaone.tplt.db.model.ExamLevel: int txt_id
+com.hanaone.tplt.db.model.ExamLevel: int score
+com.hanaone.tplt.db.model.ExamLevel: int maxScore
+com.hanaone.tplt.db.model.ExamLevel: int active
+com.hanaone.tplt.db.model.ExamLevel: int color
+com.hanaone.tplt.db.model.ExamLevel: ExamLevel()
+com.hanaone.tplt.db.model.ExamLevel: int getId()
+com.hanaone.tplt.db.model.ExamLevel: void setId(int)
+com.hanaone.tplt.db.model.ExamLevel: int getExam_id()
+com.hanaone.tplt.db.model.ExamLevel: void setExam_id(int)
+com.hanaone.tplt.db.model.ExamLevel: int getNumber()
+com.hanaone.tplt.db.model.ExamLevel: void setNumber(int)
+com.hanaone.tplt.db.model.ExamLevel: java.lang.String getLabel()
+com.hanaone.tplt.db.model.ExamLevel: void setLabel(java.lang.String)
+com.hanaone.tplt.db.model.ExamLevel: int getAudio_id()
+com.hanaone.tplt.db.model.ExamLevel: void setAudio_id(int)
+com.hanaone.tplt.db.model.ExamLevel: int getPdf_id()
+com.hanaone.tplt.db.model.ExamLevel: void setPdf_id(int)
+com.hanaone.tplt.db.model.ExamLevel: int getActive()
+com.hanaone.tplt.db.model.ExamLevel: void setActive(int)
+com.hanaone.tplt.db.model.ExamLevel: int getTxt_id()
+com.hanaone.tplt.db.model.ExamLevel: void setTxt_id(int)
+com.hanaone.tplt.db.model.ExamLevel: int getScore()
+com.hanaone.tplt.db.model.ExamLevel: void setScore(int)
+com.hanaone.tplt.db.model.ExamLevel: int getMaxScore()
+com.hanaone.tplt.db.model.ExamLevel: void setMaxScore(int)
+com.hanaone.tplt.db.model.ExamLevel: int getColor()
+com.hanaone.tplt.db.model.ExamLevel: void setColor(int)
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String TABLE_NAME
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_EXAM_ID
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_NUMBER
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_LABEL
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_AUDIO_ID
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_PDF_ID
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_TXT_ID
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_SCORE
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_MAXSCORE
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_ACTIVE
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: java.lang.String COLUMN_NAME_COLOR
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: com.hanaone.tplt.db.model.ExamLevel this$0
+com.hanaone.tplt.db.model.ExamLevel$ExamLevelEntry: ExamLevel$ExamLevelEntry(com.hanaone.tplt.db.model.ExamLevel)
+com.hanaone.tplt.db.model.Examination: int number
+com.hanaone.tplt.db.model.Examination: java.lang.String date
+com.hanaone.tplt.db.model.Examination: Examination()
+com.hanaone.tplt.db.model.Examination: int getNumber()
+com.hanaone.tplt.db.model.Examination: void setNumber(int)
+com.hanaone.tplt.db.model.Examination: java.lang.String getDate()
+com.hanaone.tplt.db.model.Examination: void setDate(java.lang.String)
+com.hanaone.tplt.db.model.Examination$ExamEntry: java.lang.String TABLE_NAME
+com.hanaone.tplt.db.model.Examination$ExamEntry: java.lang.String COLUMN_NAME_NUMBER
+com.hanaone.tplt.db.model.Examination$ExamEntry: java.lang.String COLUMN_NAME_DATE
+com.hanaone.tplt.db.model.Examination$ExamEntry: Examination$ExamEntry()
+com.hanaone.tplt.db.model.FileExtra: int id
+com.hanaone.tplt.db.model.FileExtra: java.lang.String type
+com.hanaone.tplt.db.model.FileExtra: java.lang.String name
+com.hanaone.tplt.db.model.FileExtra: java.lang.String pathLocal
+com.hanaone.tplt.db.model.FileExtra: java.lang.String pathRemote
+com.hanaone.tplt.db.model.FileExtra: long size
+com.hanaone.tplt.db.model.FileExtra: FileExtra()
+com.hanaone.tplt.db.model.FileExtra: int getId()
+com.hanaone.tplt.db.model.FileExtra: void setId(int)
+com.hanaone.tplt.db.model.FileExtra: java.lang.String getType()
+com.hanaone.tplt.db.model.FileExtra: void setType(java.lang.String)
+com.hanaone.tplt.db.model.FileExtra: java.lang.String getPathLocal()
+com.hanaone.tplt.db.model.FileExtra: void setPathLocal(java.lang.String)
+com.hanaone.tplt.db.model.FileExtra: java.lang.String getPathRemote()
+com.hanaone.tplt.db.model.FileExtra: void setPathRemote(java.lang.String)
+com.hanaone.tplt.db.model.FileExtra: java.lang.String getName()
+com.hanaone.tplt.db.model.FileExtra: void setName(java.lang.String)
+com.hanaone.tplt.db.model.FileExtra: long getSize()
+com.hanaone.tplt.db.model.FileExtra: void setSize(long)
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: java.lang.String TABLE_NAME
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: java.lang.String COLUMN_NAME_FILE_TYPE
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: java.lang.String COLUMN_NAME_FILE_NAME
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: java.lang.String COLUMN_NAME_FILE_PATH_LOCAL
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: java.lang.String COLUMN_NAME_FILE_PATH_REMOTE
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: java.lang.String COLUMN_NAME_FILE_SIZE
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: com.hanaone.tplt.db.model.FileExtra this$0
+com.hanaone.tplt.db.model.FileExtra$FileExtraEntry: FileExtra$FileExtraEntry(com.hanaone.tplt.db.model.FileExtra)
+com.hanaone.tplt.db.model.Question: int id
+com.hanaone.tplt.db.model.Question: int number
+com.hanaone.tplt.db.model.Question: int mark
+com.hanaone.tplt.db.model.Question: java.lang.String text
+com.hanaone.tplt.db.model.Question: int answer
+com.hanaone.tplt.db.model.Question: java.lang.String type
+com.hanaone.tplt.db.model.Question: java.lang.String hint
+com.hanaone.tplt.db.model.Question: float startAudio
+com.hanaone.tplt.db.model.Question: float endAudio
+com.hanaone.tplt.db.model.Question: int section_id
+com.hanaone.tplt.db.model.Question: Question()
+com.hanaone.tplt.db.model.Question: int getId()
+com.hanaone.tplt.db.model.Question: void setId(int)
+com.hanaone.tplt.db.model.Question: int getNumber()
+com.hanaone.tplt.db.model.Question: void setNumber(int)
+com.hanaone.tplt.db.model.Question: int getMark()
+com.hanaone.tplt.db.model.Question: void setMark(int)
+com.hanaone.tplt.db.model.Question: java.lang.String getText()
+com.hanaone.tplt.db.model.Question: void setText(java.lang.String)
+com.hanaone.tplt.db.model.Question: int getSection_id()
+com.hanaone.tplt.db.model.Question: void setSection_id(int)
+com.hanaone.tplt.db.model.Question: int getAnswer()
+com.hanaone.tplt.db.model.Question: void setAnswer(int)
+com.hanaone.tplt.db.model.Question: java.lang.String getType()
+com.hanaone.tplt.db.model.Question: void setType(java.lang.String)
+com.hanaone.tplt.db.model.Question: java.lang.String getHint()
+com.hanaone.tplt.db.model.Question: void setHint(java.lang.String)
+com.hanaone.tplt.db.model.Question: float getStartAudio()
+com.hanaone.tplt.db.model.Question: void setStartAudio(float)
+com.hanaone.tplt.db.model.Question: float getEndAudio()
+com.hanaone.tplt.db.model.Question: void setEndAudio(float)
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String TABLE_NAME
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_NUMBER
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_MARK
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_TEXT
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_ANSWER
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_TYPE
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_HINT
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_START_AUDIO
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_END_AUDIO
+com.hanaone.tplt.db.model.Question$QuestionEntry: java.lang.String COLUMN_NAME_SECTION_ID
+com.hanaone.tplt.db.model.Question$QuestionEntry: Question$QuestionEntry()
+com.hanaone.tplt.db.model.Section: int id
+com.hanaone.tplt.db.model.Section: int number
+com.hanaone.tplt.db.model.Section: float startAudio
+com.hanaone.tplt.db.model.Section: float endAudio
+com.hanaone.tplt.db.model.Section: java.lang.String text
+com.hanaone.tplt.db.model.Section: java.lang.String hint
+com.hanaone.tplt.db.model.Section: int exam_level_id
+com.hanaone.tplt.db.model.Section: Section()
+com.hanaone.tplt.db.model.Section: int getId()
+com.hanaone.tplt.db.model.Section: void setId(int)
+com.hanaone.tplt.db.model.Section: int getNumber()
+com.hanaone.tplt.db.model.Section: void setNumber(int)
+com.hanaone.tplt.db.model.Section: float getStartAudio()
+com.hanaone.tplt.db.model.Section: void setStartAudio(float)
+com.hanaone.tplt.db.model.Section: float getEndAudio()
+com.hanaone.tplt.db.model.Section: void setEndAudio(float)
+com.hanaone.tplt.db.model.Section: java.lang.String getText()
+com.hanaone.tplt.db.model.Section: void setText(java.lang.String)
+com.hanaone.tplt.db.model.Section: int getExam_level_id()
+com.hanaone.tplt.db.model.Section: void setExam_level_id(int)
+com.hanaone.tplt.db.model.Section: java.lang.String getHint()
+com.hanaone.tplt.db.model.Section: void setHint(java.lang.String)
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String TABLE_NAME
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String COLUMN_NAME_NUMBER
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String COLUMN_NAME_START_AUDIO
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String COLUMN_NAME_END_AUDIO
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String COLUMN_NAME_TEXT
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String COLUMN_NAME_HINT
+com.hanaone.tplt.db.model.Section$SectionEntry: java.lang.String COLUMN_NAME_EXAM_LEVEL_ID
+com.hanaone.tplt.db.model.Section$SectionEntry: Section$SectionEntry()
+com.hanaone.tplt.db.sample.QuestionSample: int id
+com.hanaone.tplt.db.sample.QuestionSample: int number
+com.hanaone.tplt.db.sample.QuestionSample: int mark
+com.hanaone.tplt.db.sample.QuestionSample: java.lang.String text
+com.hanaone.tplt.db.sample.QuestionSample: int answer
+com.hanaone.tplt.db.sample.QuestionSample: java.lang.String type
+com.hanaone.tplt.db.sample.QuestionSample: java.lang.String hint
+com.hanaone.tplt.db.sample.QuestionSample: float startAudio
+com.hanaone.tplt.db.sample.QuestionSample: float endAudio
+com.hanaone.tplt.db.sample.QuestionSample: int audio
+com.hanaone.tplt.db.sample.QuestionSample: int section_id
+com.hanaone.tplt.db.sample.QuestionSample: QuestionSample()
+com.hanaone.tplt.db.sample.QuestionSample: int getId()
+com.hanaone.tplt.db.sample.QuestionSample: void setId(int)
+com.hanaone.tplt.db.sample.QuestionSample: int getNumber()
+com.hanaone.tplt.db.sample.QuestionSample: void setNumber(int)
+com.hanaone.tplt.db.sample.QuestionSample: int getMark()
+com.hanaone.tplt.db.sample.QuestionSample: void setMark(int)
+com.hanaone.tplt.db.sample.QuestionSample: java.lang.String getText()
+com.hanaone.tplt.db.sample.QuestionSample: void setText(java.lang.String)
+com.hanaone.tplt.db.sample.QuestionSample: int getSection_id()
+com.hanaone.tplt.db.sample.QuestionSample: void setSection_id(int)
+com.hanaone.tplt.db.sample.QuestionSample: int getAnswer()
+com.hanaone.tplt.db.sample.QuestionSample: void setAnswer(int)
+com.hanaone.tplt.db.sample.QuestionSample: java.lang.String getType()
+com.hanaone.tplt.db.sample.QuestionSample: void setType(java.lang.String)
+com.hanaone.tplt.db.sample.QuestionSample: java.lang.String getHint()
+com.hanaone.tplt.db.sample.QuestionSample: void setHint(java.lang.String)
+com.hanaone.tplt.db.sample.QuestionSample: float getStartAudio()
+com.hanaone.tplt.db.sample.QuestionSample: void setStartAudio(float)
+com.hanaone.tplt.db.sample.QuestionSample: float getEndAudio()
+com.hanaone.tplt.db.sample.QuestionSample: void setEndAudio(float)
+com.hanaone.tplt.db.sample.QuestionSample: int getAudio()
+com.hanaone.tplt.db.sample.QuestionSample: void setAudio(int)
+com.hanaone.tplt.db.sample.SectionSample: int id
+com.hanaone.tplt.db.sample.SectionSample: int number
+com.hanaone.tplt.db.sample.SectionSample: float startAudio
+com.hanaone.tplt.db.sample.SectionSample: float endAudio
+com.hanaone.tplt.db.sample.SectionSample: java.lang.String text
+com.hanaone.tplt.db.sample.SectionSample: java.lang.String hint
+com.hanaone.tplt.db.sample.SectionSample: int exam_level_id
+com.hanaone.tplt.db.sample.SectionSample: int audio
+com.hanaone.tplt.db.sample.SectionSample: SectionSample()
+com.hanaone.tplt.db.sample.SectionSample: int getId()
+com.hanaone.tplt.db.sample.SectionSample: void setId(int)
+com.hanaone.tplt.db.sample.SectionSample: int getNumber()
+com.hanaone.tplt.db.sample.SectionSample: void setNumber(int)
+com.hanaone.tplt.db.sample.SectionSample: float getStartAudio()
+com.hanaone.tplt.db.sample.SectionSample: void setStartAudio(float)
+com.hanaone.tplt.db.sample.SectionSample: float getEndAudio()
+com.hanaone.tplt.db.sample.SectionSample: void setEndAudio(float)
+com.hanaone.tplt.db.sample.SectionSample: java.lang.String getText()
+com.hanaone.tplt.db.sample.SectionSample: void setText(java.lang.String)
+com.hanaone.tplt.db.sample.SectionSample: java.lang.String getHint()
+com.hanaone.tplt.db.sample.SectionSample: void setHint(java.lang.String)
+com.hanaone.tplt.db.sample.SectionSample: int getExam_level_id()
+com.hanaone.tplt.db.sample.SectionSample: void setExam_level_id(int)
+com.hanaone.tplt.db.sample.SectionSample: int getAudio()
+com.hanaone.tplt.db.sample.SectionSample: void setAudio(int)
+com.hanaone.tplt.util.DatabaseUtils
+com.hanaone.tplt.util.DatabaseUtils: DatabaseUtils()
+com.hanaone.tplt.util.DatabaseUtils: java.lang.Object convertObject(java.lang.Object,java.lang.Class)
+com.hanaone.tplt.view.DigitalClockView
+com.hanaone.tplt.view.DigitalClockView: DigitalClockView(android.content.Context,android.util.AttributeSet)
+com.hanaone.tplt.view.DraggableButton
+com.hanaone.tplt.view.DraggableButton: DraggableButton(android.content.Context,android.util.AttributeSet)
+com.kyleduo.switchbutton.ColorUtils: int ENABLE_ATTR
+com.kyleduo.switchbutton.ColorUtils: int CHECKED_ATTR
+com.kyleduo.switchbutton.ColorUtils: int PRESSED_ATTR
+com.kyleduo.switchbutton.ColorUtils: ColorUtils()
+com.kyleduo.switchbutton.ColorUtils: android.content.res.ColorStateList generateThumbColorWithTintColor(int)
+com.kyleduo.switchbutton.ColorUtils: android.content.res.ColorStateList generateBackColorWithTintColor(int)
+com.kyleduo.switchbutton.SwitchButton
+com.kyleduo.switchbutton.SwitchButton: float DEFAULT_BACK_MEASURE_RATIO
+com.kyleduo.switchbutton.SwitchButton: int DEFAULT_THUMB_SIZE_DP
+com.kyleduo.switchbutton.SwitchButton: int DEFAULT_THUMB_MARGIN_DP
+com.kyleduo.switchbutton.SwitchButton: int DEFAULT_ANIMATION_DURATION
+com.kyleduo.switchbutton.SwitchButton: int DEFAULT_TINT_COLOR
+com.kyleduo.switchbutton.SwitchButton: int[] CHECKED_PRESSED_STATE
+com.kyleduo.switchbutton.SwitchButton: int[] UNCHECKED_PRESSED_STATE
+com.kyleduo.switchbutton.SwitchButton: android.graphics.drawable.Drawable mThumbDrawable
+com.kyleduo.switchbutton.SwitchButton: android.graphics.drawable.Drawable mBackDrawable
+com.kyleduo.switchbutton.SwitchButton: android.content.res.ColorStateList mBackColor
+com.kyleduo.switchbutton.SwitchButton: android.content.res.ColorStateList mThumbColor
+com.kyleduo.switchbutton.SwitchButton: float mThumbRadius
+com.kyleduo.switchbutton.SwitchButton: float mBackRadius
+com.kyleduo.switchbutton.SwitchButton: android.graphics.RectF mThumbMargin
+com.kyleduo.switchbutton.SwitchButton: float mBackMeasureRatio
+com.kyleduo.switchbutton.SwitchButton: long mAnimationDuration
+com.kyleduo.switchbutton.SwitchButton: boolean mFadeBack
+com.kyleduo.switchbutton.SwitchButton: int mTintColor
+com.kyleduo.switchbutton.SwitchButton: android.graphics.PointF mThumbSizeF
+com.kyleduo.switchbutton.SwitchButton: int mCurrThumbColor
+com.kyleduo.switchbutton.SwitchButton: int mCurrBackColor
+com.kyleduo.switchbutton.SwitchButton: int mNextBackColor
+com.kyleduo.switchbutton.SwitchButton: android.graphics.drawable.Drawable mCurrentBackDrawable
+com.kyleduo.switchbutton.SwitchButton: android.graphics.drawable.Drawable mNextBackDrawable
+com.kyleduo.switchbutton.SwitchButton: android.graphics.RectF mThumbRectF
+com.kyleduo.switchbutton.SwitchButton: android.graphics.RectF mBackRectF
+com.kyleduo.switchbutton.SwitchButton: android.graphics.RectF mSafeRectF
+com.kyleduo.switchbutton.SwitchButton: android.graphics.Paint mPaint
+com.kyleduo.switchbutton.SwitchButton: boolean mIsThumbUseDrawable
+com.kyleduo.switchbutton.SwitchButton: boolean mIsBackUseDrawable
+com.kyleduo.switchbutton.SwitchButton: boolean mDrawDebugRect
+com.kyleduo.switchbutton.SwitchButton: android.animation.ObjectAnimator mProcessAnimator
+com.kyleduo.switchbutton.SwitchButton: float mProcess
+com.kyleduo.switchbutton.SwitchButton: android.graphics.RectF mPresentThumbRectF
+com.kyleduo.switchbutton.SwitchButton: float mStartX
+com.kyleduo.switchbutton.SwitchButton: float mStartY
+com.kyleduo.switchbutton.SwitchButton: float mLastX
+com.kyleduo.switchbutton.SwitchButton: int mTouchSlop
+com.kyleduo.switchbutton.SwitchButton: int mClickTimeout
+com.kyleduo.switchbutton.SwitchButton: android.graphics.Paint mRectPaint
+com.kyleduo.switchbutton.SwitchButton: void <clinit>()
+com.kyleduo.switchbutton.SwitchButton: SwitchButton(android.content.Context,android.util.AttributeSet,int)
+com.kyleduo.switchbutton.SwitchButton: SwitchButton(android.content.Context,android.util.AttributeSet)
+com.kyleduo.switchbutton.SwitchButton: SwitchButton(android.content.Context)
+com.kyleduo.switchbutton.SwitchButton: void init(android.util.AttributeSet)
+com.kyleduo.switchbutton.SwitchButton: void onMeasure(int,int)
+com.kyleduo.switchbutton.SwitchButton: int measureWidth(int)
+com.kyleduo.switchbutton.SwitchButton: int measureHeight(int)
+com.kyleduo.switchbutton.SwitchButton: void onSizeChanged(int,int,int,int)
+com.kyleduo.switchbutton.SwitchButton: void setup()
+com.kyleduo.switchbutton.SwitchButton: void onDraw(android.graphics.Canvas)
+com.kyleduo.switchbutton.SwitchButton: void drawableStateChanged()
+com.kyleduo.switchbutton.SwitchButton: boolean onTouchEvent(android.view.MotionEvent)
+com.kyleduo.switchbutton.SwitchButton: boolean getStatusBasedOnPos()
+com.kyleduo.switchbutton.SwitchButton: float getProcess()
+com.kyleduo.switchbutton.SwitchButton: void setProcess(float)
+com.kyleduo.switchbutton.SwitchButton: boolean performClick()
+com.kyleduo.switchbutton.SwitchButton: void animateToState(boolean)
+com.kyleduo.switchbutton.SwitchButton: void catchView()
+com.kyleduo.switchbutton.SwitchButton: void setChecked(boolean)
+com.kyleduo.switchbutton.SwitchButton: void setCheckedImmediately(boolean)
+com.kyleduo.switchbutton.SwitchButton: void toggleImmediately()
+com.kyleduo.switchbutton.SwitchButton: void setDrawableState(android.graphics.drawable.Drawable)
+com.kyleduo.switchbutton.SwitchButton: boolean isDrawDebugRect()
+com.kyleduo.switchbutton.SwitchButton: void setDrawDebugRect(boolean)
+com.kyleduo.switchbutton.SwitchButton: long getAnimationDuration()
+com.kyleduo.switchbutton.SwitchButton: void setAnimationDuration(long)
+com.kyleduo.switchbutton.SwitchButton: android.graphics.drawable.Drawable getThumbDrawable()
+com.kyleduo.switchbutton.SwitchButton: void setThumbDrawable(android.graphics.drawable.Drawable)
+com.kyleduo.switchbutton.SwitchButton: void setThumbDrawableRes(int)
+com.kyleduo.switchbutton.SwitchButton: android.graphics.drawable.Drawable getBackDrawable()
+com.kyleduo.switchbutton.SwitchButton: void setBackDrawable(android.graphics.drawable.Drawable)
+com.kyleduo.switchbutton.SwitchButton: void setBackDrawableRes(int)
+com.kyleduo.switchbutton.SwitchButton: android.content.res.ColorStateList getBackColor()
+com.kyleduo.switchbutton.SwitchButton: void setBackColor(android.content.res.ColorStateList)
+com.kyleduo.switchbutton.SwitchButton: void setBackColorRes(int)
+com.kyleduo.switchbutton.SwitchButton: android.content.res.ColorStateList getThumbColor()
+com.kyleduo.switchbutton.SwitchButton: void setThumbColor(android.content.res.ColorStateList)
+com.kyleduo.switchbutton.SwitchButton: void setThumbColorRes(int)
+com.kyleduo.switchbutton.SwitchButton: float getBackMeasureRatio()
+com.kyleduo.switchbutton.SwitchButton: void setBackMeasureRatio(float)
+com.kyleduo.switchbutton.SwitchButton: android.graphics.RectF getThumbMargin()
+com.kyleduo.switchbutton.SwitchButton: void setThumbMargin(android.graphics.RectF)
+com.kyleduo.switchbutton.SwitchButton: void setThumbMargin(float,float,float,float)
+com.kyleduo.switchbutton.SwitchButton: void setThumbSize(float,float)
+com.kyleduo.switchbutton.SwitchButton: float getThumbWidth()
+com.kyleduo.switchbutton.SwitchButton: float getThumbHeight()
+com.kyleduo.switchbutton.SwitchButton: void setThumbSize(android.graphics.PointF)
+com.kyleduo.switchbutton.SwitchButton: android.graphics.PointF getThumbSizeF()
+com.kyleduo.switchbutton.SwitchButton: float getThumbRadius()
+com.kyleduo.switchbutton.SwitchButton: void setThumbRadius(float)
+com.kyleduo.switchbutton.SwitchButton: android.graphics.PointF getBackSizeF()
+com.kyleduo.switchbutton.SwitchButton: float getBackRadius()
+com.kyleduo.switchbutton.SwitchButton: void setBackRadius(float)
+com.kyleduo.switchbutton.SwitchButton: boolean isFadeBack()
+com.kyleduo.switchbutton.SwitchButton: void setFadeBack(boolean)
+com.kyleduo.switchbutton.SwitchButton: int getTintColor()
+com.kyleduo.switchbutton.SwitchButton: void setTintColor(int)
