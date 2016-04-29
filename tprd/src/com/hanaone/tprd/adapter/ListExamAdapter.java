@@ -504,15 +504,11 @@ public class ListExamAdapter extends BaseAdapter {
 			String internalRootPath = Constants.getInternalRootPath(mContext);
 			String externalRootPath = Constants.getExternalRootPath(mContext);
 			String urlTxt = level.getTxt().getPathRemote();
-			String urlAudio = level.getAudio().get(0).getPathRemote();
 
 			// calculate size
 			long size = 0;
 			try {
 				size += dlHelper.getSize(urlTxt);
-				long audioSize= dlHelper.getSize(urlAudio);
-				audioSize = audioSize == 0 ? 50000000 : audioSize;
-				size += audioSize;
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -556,47 +552,7 @@ public class ListExamAdapter extends BaseAdapter {
 			}
 			
 
-			
-			String audioPath = externalRootPath + "/" + Constants.FILE_TYPE_MP3 + "_" + level.getId() + ".mp3";
-			
-			if(level.getAudio().get(0).getPathLocal() == null || level.getAudio().get(0).getPathLocal().isEmpty()){
-				try {
-					// multi link
-					String[] links = urlAudio.split(";");
-					//
-					for(String link: links){
-						InputStream is = dlHelper.parseUrl(link);
-						if(is != null){
-							file = new File(audioPath);
-							FileOutputStream os = new FileOutputStream(file);
-							
-							byte[] buf = new byte[1024];
-							int read = 0;
-													
-							while((read = is.read(buf)) > 0){
-								os.write(buf, 0, read);	
-								
-								sum += read;		
-								if(size > 0) publishProgress((int)((sum * 100l)/size));
-							}
-							os.close();
-							is.close();	
-							break;
-						}							
-					}
 					
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					//showMsg(e.getMessage());
-				} catch (SAXException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (ParserConfigurationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}				
-			}			
 			
 			
 			file = new File(txtPath);
@@ -680,14 +636,6 @@ public class ListExamAdapter extends BaseAdapter {
 			
 
 			// update level
-			file = new File(audioPath);
-			if(file.exists()){
-				
-				if(dbAdapter.updateLevelAudio(level.getId(), audioPath, urlAudio) > 0){
-					audioFlag = true;
-					level.getAudio().get(0).setPathLocal(audioPath);
-				}
-			}
 			
 
 			switch (level.getNumber()) {

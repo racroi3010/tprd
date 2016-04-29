@@ -93,16 +93,6 @@ public class HelpActivity extends Activity {
 		LocaleUtils.setLocale(mContext, position);	
 		setContentView(R.layout.activity_help);
 
-		SwitchButton swAudio = (SwitchButton) findViewById(R.id.sw_help_audio);
-		swAudio.setChecked(PreferenceHandler.getAudioPlayPreference(mContext));
-		swAudio.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView,
-					boolean isChecked) {
-				PreferenceHandler.setAudioPlayPreference(mContext, isChecked);
-			}
-		});
 
 		SwitchButton swHint = (SwitchButton) findViewById(R.id.sw_help_hint);
 		swHint.setChecked(PreferenceHandler.getHintDisplayPreference(mContext));

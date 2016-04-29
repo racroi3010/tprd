@@ -119,52 +119,7 @@
                     android:textColor="@color/BLACK" />
             </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/ic_av_volume_down_cyan" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:gravity="center"
-                        android:text="@string/setting_play_audio"
-                        android:textColor="@color/BLACK"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true" >
-
-                    <com.kyleduo.switchbutton.SwitchButton
-                        android:id="@+id/sw_help_audio"
-                        style="@style/SwitchButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:kswTintColor="@color/CYAN" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="50dp"
-                android:background="@color/GRAY_UNDER_BAR" />
+       
 
             <RelativeLayout
                 android:layout_width="match_parent"

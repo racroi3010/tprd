@@ -1,9 +1,12 @@
 package com.hanaone.tprd.db;
 
+import com.hanaone.tprd.db.model.FileExtra;
+import com.hanaone.tprd.db.model.Model;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class FileDataSet implements Parcelable {
+public class FileDataSet implements Parcelable, Pojo {
 	private int id;
 	private String type;
 	private String name;
@@ -88,6 +91,17 @@ public class FileDataSet implements Parcelable {
 		pathLocal = in.readString();
 		pathRemote = in.readString();
 		size = in.readLong();
+	}
+	@Override
+	public FileExtra toModel() {
+		FileExtra file = new FileExtra();
+		file.setId(id);
+		file.setType(type);
+		file.setName(name);
+		file.setPathLocal(pathLocal);
+		file.setPathRemote(pathRemote);
+		file.setSize(size);
+		return file;
 	}	
 	
 }

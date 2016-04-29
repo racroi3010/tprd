@@ -3,10 +3,13 @@ package com.hanaone.tprd.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hanaone.tprd.db.model.Model;
+import com.hanaone.tprd.db.model.Question;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class QuestionDataSet implements Parcelable{
+public class QuestionDataSet implements Parcelable, Pojo{
 	protected int id;
 	protected int number;
 	protected int mark;
@@ -17,8 +20,6 @@ public class QuestionDataSet implements Parcelable{
 	protected String type;
 
 	protected String hint;
-	protected float startAudio;
-	protected float endAudio;
 	public QuestionDataSet() {
 		choice = -1;
 	}	
@@ -78,18 +79,6 @@ public class QuestionDataSet implements Parcelable{
 		this.choice = choice;
 	}
 	
-	public float getStartAudio() {
-		return startAudio;
-	}
-	public void setStartAudio(float startAudio) {
-		this.startAudio = startAudio;
-	}
-	public float getEndAudio() {
-		return endAudio;
-	}
-	public void setEndAudio(float endAudio) {
-		this.endAudio = endAudio;
-	}
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -109,8 +98,6 @@ public class QuestionDataSet implements Parcelable{
 		dest.writeInt(choice);
 		dest.writeString(type);
 		dest.writeString(hint);
-		dest.writeFloat(startAudio);
-		dest.writeFloat(endAudio);
 		
 	}
 	public static final Parcelable.Creator<QuestionDataSet> CREATOR
@@ -142,7 +129,17 @@ public class QuestionDataSet implements Parcelable{
 		choice = in.readInt();
 		type = in.readString();
 		hint = in.readString();
-		startAudio = in.readFloat();
-		endAudio = in.readFloat();
+	}
+	@Override
+	public Question toModel() {
+		Question question = new Question();
+		question.setId(id);
+		question.setNumber(number);
+		question.setMark(mark);
+		question.setText(text);
+		question.setAnswer(answer);
+		question.setType(type);
+		question.setHint(hint);	
+		return question;
 	}		
 }

@@ -1,8 +1,11 @@
 package com.hanaone.tprd.db.model;
 
+import com.hanaone.tprd.db.ChoiceDataSet;
+import com.hanaone.tprd.db.Pojo;
+
 import android.provider.BaseColumns;
 
-public class Choice {
+public class Choice implements Model {
 	private int id;
 	private int number;
 	private String type;
@@ -65,5 +68,17 @@ public class Choice {
 		public static final String COLUMN_NAME_CONTENT = "content";
 		public static final String COLUMN_FILE_ID = "file_id";
 		public static final String COLUMN_QUESTION_ID = "question_id";
+	}
+
+
+	@Override
+	public ChoiceDataSet toPojo() {
+		ChoiceDataSet choice = new ChoiceDataSet();
+		choice.setId(id);
+		choice.setNumber(number);
+		choice.setType(type);
+		choice.setLabel(label);
+		choice.setContent(content);
+		return choice;
 	}	
 }

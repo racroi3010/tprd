@@ -3,23 +3,25 @@ package com.hanaone.tprd.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hanaone.tprd.db.model.ExamLevel;
+import com.hanaone.tprd.db.model.Model;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class LevelDataSet implements Parcelable {
+public class LevelDataSet implements Parcelable, Pojo {
 	private int id;
 	private int number;
 	private String label;
 	private List<SectionDataSet> sections;
 	private int active;
 	private FileDataSet txt;
-	private List<FileDataSet> audio;	
 	private FileDataSet pdf;
 	private int score;
 	private int maxScore;
 	private int color;
 	private int exam_id;
-
+	private int time;
 	public LevelDataSet() {
 
 	}
@@ -55,12 +57,7 @@ public class LevelDataSet implements Parcelable {
 		this.active = active;
 	}
 	
-	public List<FileDataSet> getAudio() {
-		return audio;
-	}
-	public void setAudio(List<FileDataSet> audio) {
-		this.audio = audio;
-	}
+
 	public FileDataSet getPdf() {
 		return pdf;
 	}
@@ -101,6 +98,13 @@ public class LevelDataSet implements Parcelable {
 	public void setExam_id(int exam_id) {
 		this.exam_id = exam_id;
 	}
+	
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
+	}
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -116,14 +120,13 @@ public class LevelDataSet implements Parcelable {
 		dest.writeTypedList(sections);
 		dest.writeInt(active);
 		dest.writeParcelable(txt, flags);
-		dest.writeTypedList(audio);
 
 		dest.writeParcelable(pdf, flags);
 		dest.writeInt(score);
 		dest.writeInt(maxScore);
 		dest.writeInt(color);
 		dest.writeInt(exam_id);
-		
+		dest.writeInt(time);
 	}
 	public static final Parcelable.Creator<LevelDataSet> CREATOR
 	= new Parcelable.Creator<LevelDataSet>() {
@@ -152,8 +155,6 @@ public class LevelDataSet implements Parcelable {
 		active = in.readInt();
 		
 		txt = in.readParcelable(FileDataSet.class.getClassLoader());
-		audio = new ArrayList<FileDataSet>();
-		in.readTypedList(audio, FileDataSet.CREATOR);
 		pdf = in.readParcelable(FileDataSet.class.getClassLoader());
 		
 		score = in.readInt();
@@ -161,6 +162,21 @@ public class LevelDataSet implements Parcelable {
 		color = in.readInt();
 		
 		exam_id = in.readInt();
+		time = in.readInt();
+	}
+	@Override
+	public ExamLevel toModel() {
+		ExamLevel level = new ExamLevel();
+		level.setId(id);
+		level.setNumber(number);
+		level.setLabel(label);
+		level.setActive(active);
+		level.setScore(score);
+		level.setMaxScore(maxScore);
+		level.setColor(color);
+		level.setExam_id(exam_id);
+		level.setTime(time);
+		return level;
 	}	
 	
 }

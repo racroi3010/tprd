@@ -3,10 +3,13 @@ package com.hanaone.tprd.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hanaone.tprd.db.model.Examination;
+import com.hanaone.tprd.db.model.Model;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ExamDataSet implements Parcelable {
+public class ExamDataSet implements Parcelable, Pojo {
 	private int number;
 	private String date;
 	private List<LevelDataSet> levels;
@@ -77,5 +80,12 @@ public class ExamDataSet implements Parcelable {
 		in.readList(levels, (ClassLoader) LevelDataSet.CREATOR);
 //		color = in.readInt();
 	
+	}
+	@Override
+	public Examination toModel() {
+		Examination exam = new Examination();
+		exam.setNumber(number);
+		exam.setDate(date);
+		return exam;
 	}	
 }

@@ -1,9 +1,12 @@
 package com.hanaone.tprd.db;
 
+import com.hanaone.tprd.db.model.Choice;
+import com.hanaone.tprd.db.model.Model;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ChoiceDataSet implements Parcelable {
+public class ChoiceDataSet implements Parcelable, Pojo {
 	private int id;
 	private int number;
 	private String type;	
@@ -89,5 +92,15 @@ public class ChoiceDataSet implements Parcelable {
 		label = in.readString();
 		content = in.readString();
 		img = in.readParcelable(FileDataSet.class.getClassLoader());
+	}
+	@Override
+	public Choice toModel() {
+		Choice choice = new Choice();
+		choice.setId(id);
+		choice.setNumber(number);
+		choice.setType(type);
+		choice.setLabel(label);
+		choice.setContent(content);
+		return choice;
 	}
 }

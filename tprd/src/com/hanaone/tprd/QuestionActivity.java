@@ -49,13 +49,11 @@ public class QuestionActivity extends FragmentActivity{
 	//private ArrayList<ResultDataSet> listResult;
 	
 //	private Timer timer;
-	private long time;
 	private DigitalClockView clock;
 	
 	private boolean activityPaused;
 	
 	private ListAdapterListener mListener = new ListAdapterListener() {
-		private boolean isPathSet = false;
 		@Override
 		public void onSelect(int questionNumber, int sectionNumber) {
 			
@@ -214,6 +212,7 @@ public class QuestionActivity extends FragmentActivity{
 			clock = (DigitalClockView) findViewById(R.id.clock);
 			Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/digital-7.ttf");
 			clock.setTypeface(tf);
+			clock.start(level.getTime(), this);
 			//RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 			//clock.setLayoutParams(layoutParams);
 			

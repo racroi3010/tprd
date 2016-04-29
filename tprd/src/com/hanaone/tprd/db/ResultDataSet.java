@@ -1,9 +1,11 @@
 package com.hanaone.tprd.db;
 
+import com.hanaone.tprd.db.model.Model;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ResultDataSet implements Parcelable {
+public class ResultDataSet implements Parcelable, Pojo {
 	private int number;
 	private int choice;
 	private int answer;
@@ -75,5 +77,10 @@ public class ResultDataSet implements Parcelable {
 		choice = in.readInt();
 		answer = in.readInt();
 		score = in.readInt();
+	}
+
+	@Override
+	public Model toModel() {
+		return null;
 	}
 }

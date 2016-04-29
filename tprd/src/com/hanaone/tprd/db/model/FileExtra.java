@@ -1,8 +1,11 @@
 package com.hanaone.tprd.db.model;
 
+import com.hanaone.tprd.db.FileDataSet;
+import com.hanaone.tprd.db.Pojo;
+
 import android.provider.BaseColumns;
 
-public class FileExtra {
+public class FileExtra implements Model {
 	private int id;
 	private String type;
 	private String name;
@@ -56,5 +59,17 @@ public class FileExtra {
 		public static final String COLUMN_NAME_FILE_PATH_LOCAL = "path_local";
 		public static final String COLUMN_NAME_FILE_PATH_REMOTE = "path_remote";
 		public static final String COLUMN_NAME_FILE_SIZE = "size";
+	}
+
+	@Override
+	public FileDataSet toPojo() {
+		FileDataSet file = new FileDataSet();
+		file.setId(id);
+		file.setType(type);
+		file.setName(name);
+		file.setPathLocal(pathLocal);
+		file.setPathRemote(pathRemote);
+		file.setSize(size);
+		return file;
 	}		
 }

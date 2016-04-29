@@ -46,7 +46,7 @@ public class Constants {
 	public static final String QUESTION_NUMBER = "QUESTION_NUMBER";
 	public static final String SECTION_NUMBER = "SECTION_NUMBER";
 	
-	public static final String PATH_ROOT = "tplt";
+	public static final String PATH_ROOT = "tprd";
 	
 	public static final String PATH_TEMP = "temp";
 	public static final String PATH_FILE = "file";

@@ -44,12 +44,9 @@ public <init>(android.content.Context, android.util.AttributeSet);
 -keep interface com.hanaone.tplt.adapter.ListExamHeaderAdapter.ExamItem{*;}
 -keep interface com.hanaone.tplt.adapter.ListSectionAdapter.Item{*;}
 
--keep class com.hanaone.tplt.db.*{*;}
--keepclassmembers class com.hanaone.tplt.db.** { *; }  
 
 -keepclassmembers class com.kyleduo.switchbutton.** { *; }  
 
--keep class com.hanaone.tplt.util.DatabaseUtils {*;}
 -keep class com.hanaone.jni.stringFromJNI {*;}
 
 -keep class * extends java.util.ListResourceBundle {

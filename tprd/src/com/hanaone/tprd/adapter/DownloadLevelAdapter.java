@@ -86,7 +86,6 @@ public class DownloadLevelAdapter extends AsyncTask<Void, Integer, Boolean> {
 		String internalRootPath = Constants.getInternalRootPath(mContext);
 		String externalRootPath = Constants.getExternalRootPath(mContext);
 		String urlTxt = level.getTxt().getPathRemote();
-		String urlAudio = level.getAudio().get(0).getPathRemote();
 		
 		// calculate size
 		long size = 0;

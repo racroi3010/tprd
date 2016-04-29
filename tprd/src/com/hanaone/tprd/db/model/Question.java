@@ -1,8 +1,11 @@
 package com.hanaone.tprd.db.model;
 
+import com.hanaone.tprd.db.Pojo;
+import com.hanaone.tprd.db.QuestionDataSet;
+
 import android.provider.BaseColumns;
 
-public class Question {
+public class Question implements Model {
 	protected int id;
 	protected int number;
 	protected int mark;
@@ -10,8 +13,6 @@ public class Question {
 	protected int answer;
 	protected String type;
 	protected String hint;	
-	protected float startAudio;
-	protected float endAudio;	
 	public int getId() {
 		return id;
 	}
@@ -78,21 +79,6 @@ public class Question {
 		this.hint = hint;
 	}
 
-	public float getStartAudio() {
-		return startAudio;
-	}
-
-	public void setStartAudio(float startAudio) {
-		this.startAudio = startAudio;
-	}
-
-	public float getEndAudio() {
-		return endAudio;
-	}
-
-	public void setEndAudio(float endAudio) {
-		this.endAudio = endAudio;
-	}
 
 	public static abstract class QuestionEntry implements BaseColumns{
 		public static final String TABLE_NAME = "question";
@@ -102,8 +88,19 @@ public class Question {
 		public static final String COLUMN_NAME_ANSWER = "answer";
 		public static final String COLUMN_NAME_TYPE = "type";
 		public static final String COLUMN_NAME_HINT = "hint";
-		public static final String COLUMN_NAME_START_AUDIO = "start_audio";
-		public static final String COLUMN_NAME_END_AUDIO = "end_audio";
 		public static final String COLUMN_NAME_SECTION_ID = "section_id";
+	}
+
+	@Override
+	public QuestionDataSet toPojo() {
+		QuestionDataSet question = new QuestionDataSet();
+		question.setId(id);
+		question.setNumber(number);
+		question.setMark(mark);
+		question.setText(text);
+		question.setAnswer(answer);
+		question.setType(type);
+		question.setHint(hint);
+		return question;
 	}		
 }

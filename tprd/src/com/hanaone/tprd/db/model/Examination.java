@@ -1,8 +1,11 @@
 package com.hanaone.tprd.db.model;
 
+import com.hanaone.tprd.db.ExamDataSet;
+import com.hanaone.tprd.db.Pojo;
+
 import android.provider.BaseColumns;
 
-public class Examination {
+public class Examination implements Model {
 //	private int id;
 	private int number;
 	private String date;
@@ -39,5 +42,14 @@ public class Examination {
 		public static final String COLUMN_NAME_NUMBER = "number";
 		public static final String COLUMN_NAME_DATE = "date";
 		
+	}
+
+	@Override
+	public ExamDataSet toPojo() {
+		ExamDataSet exam = new ExamDataSet();
+		exam.setNumber(number);
+		exam.setDate(date);
+		
+		return exam;
 	}
 }

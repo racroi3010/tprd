@@ -1,20 +1,23 @@
 package com.hanaone.tprd.db.model;
 
+import com.hanaone.tprd.db.LevelDataSet;
+import com.hanaone.tprd.db.Pojo;
+
 import android.provider.BaseColumns;
 
-public class ExamLevel {
+public class ExamLevel implements Model {
 	private int id;
 	private int exam_id;
 	private int number;
 	private String label;
-	private int audio_id;
 	private int pdf_id;	
 	private int txt_id;
 	private int score;
 	private int maxScore;	
+
 	private int active;
 	private int color;
-	
+	private int time; // minute	
 	public int getId() {
 		return id;
 	}
@@ -40,13 +43,6 @@ public class ExamLevel {
 	public void setLabel(String label) {
 		this.label = label;
 	}
-	public int getAudio_id() {
-		return audio_id;
-	}
-	public void setAudio_id(int audio_id) {
-		this.audio_id = audio_id;
-	}
-
 	
 
 	public int getPdf_id() {
@@ -108,18 +104,45 @@ public class ExamLevel {
 
 
 
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+
+
+
 	public abstract class ExamLevelEntry implements BaseColumns{
 		public static final String TABLE_NAME = "examlevel";
 		public static final String COLUMN_NAME_EXAM_ID = "exam_id";
 		public static final String COLUMN_NAME_NUMBER = "number";
 		public static final String COLUMN_NAME_LABEL = "label";	
-		public static final String COLUMN_NAME_AUDIO_ID = "audio_id";
 		public static final String COLUMN_NAME_PDF_ID = "pdf_id";	
 		public static final String COLUMN_NAME_TXT_ID = "txt_id";	
 		public static final String COLUMN_NAME_SCORE = "score";
 		public static final String COLUMN_NAME_MAXSCORE = "maxscore";
 		public static final String COLUMN_NAME_ACTIVE = "active";
 		public static final String COLUMN_NAME_COLOR = "color";
-		
+		public static final String COLUMN_NAME_TIME = "time";
+	}
+
+
+
+
+	@Override
+	public LevelDataSet toPojo() {
+		LevelDataSet level = new LevelDataSet();
+		level.setId(id);
+		level.setExam_id(exam_id);
+		level.setNumber(number);
+		level.setLabel(label);
+		level.setScore(score);
+		level.setMaxScore(maxScore);
+		level.setActive(active);
+		level.setColor(color);
+		level.setTime(time);
+		return level;
 	}	
 }

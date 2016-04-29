@@ -3,14 +3,15 @@ package com.hanaone.tprd.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hanaone.tprd.db.model.Model;
+import com.hanaone.tprd.db.model.Section;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class SectionDataSet implements Parcelable {
+public class SectionDataSet implements Parcelable, Pojo {
 	protected int id;
 	protected int number;
-	protected float startAudio;
-	protected float endAudio;
 	protected String text;
 	protected String hint;
 	protected List<QuestionDataSet> questions;
@@ -28,18 +29,6 @@ public class SectionDataSet implements Parcelable {
 	}
 	public void setNumber(int number) {
 		this.number = number;
-	}
-	public float getStartAudio() {
-		return startAudio;
-	}
-	public void setStartAudio(float startAudio) {
-		this.startAudio = startAudio;
-	}
-	public float getEndAudio() {
-		return endAudio;
-	}
-	public void setEndAudio(float endAudio) {
-		this.endAudio = endAudio;
 	}
 	public String getText() {
 		return text;
@@ -70,8 +59,6 @@ public class SectionDataSet implements Parcelable {
 		
 		dest.writeInt(id);
 		dest.writeInt(number);
-		dest.writeFloat(startAudio);
-		dest.writeFloat(endAudio);
 		dest.writeString(text);
 		dest.writeString(hint);
 		dest.writeTypedList(questions);
@@ -96,12 +83,20 @@ public class SectionDataSet implements Parcelable {
 	protected SectionDataSet(Parcel in){
 		id = in.readInt();
 		number = in.readInt();
-		startAudio = in.readFloat();
-		endAudio = in.readFloat();
 		text = in.readString();
 		hint = in.readString();
 		
 		questions = new ArrayList<QuestionDataSet>();
 		in.readTypedList(questions, QuestionDataSet.CREATOR);
+	}
+	@Override
+	public Section toModel() {
+		Section section = new Section();
+		section.setId(id);
+		section.setNumber(number);
+		section.setText(text);
+		section.setHint(hint);
+		
+		return section;
 	}		
 }
