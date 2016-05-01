@@ -20,6 +20,7 @@ import com.hanaone.tprd.util.PreferenceHandler;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -43,8 +44,7 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 	private static final String ARG_PAGE = "page";
 	private static final String ARG_Listener = "listener";
 	private ArrayList<SectionDataSet> mSections;
-	private boolean isShowHint;
-	private boolean cheat;
+//	private boolean cheat;
 	public QuestionSlideFragment() {
 		
 	}
@@ -67,13 +67,7 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mSections = getArguments().getParcelableArrayList(ARG_PAGE);
-		String mode = PreferenceHandler.getQuestionModePreference(getActivity());
-		cheat = false;
-		if(Constants.QUESTION_MODE_PRACTICE.equals(mode) 
-				|| Constants.QUESTION_MODE_REVIEW.equals(mode)){
-			isShowHint = PreferenceHandler.getHintDisplayPreference(getActivity());
-			cheat = true;
-		}		
+		String mode = PreferenceHandler.getQuestionModePreference(getActivity());	
 	}
 
 	@Override
@@ -83,50 +77,42 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 		
 		LinearLayout layoutSections = (LinearLayout) sectionsView.findViewById(R.id.layout_sections);
 		
-		for(SectionDataSet section: mSections){
+		for(final SectionDataSet section: mSections){
 			ViewGroup sectionView = (ViewGroup) inflater.inflate(R.layout.layout_question_section, layoutSections, false);
 			TextView txtSectionQuestion = (TextView) sectionView.findViewById(R.id.txt_section_question);
 			
 			LinearLayout layoutQuestions = (LinearLayout) sectionView.findViewById(R.id.layout_questions);
 			
 			final TextView txtSectionHint = (TextView) sectionView.findViewById(R.id.txt_section_hint);
-			final Button btnSectionHint = (Button) sectionView.findViewById(R.id.btn_section_hint);
+		
 			
 			if(section.getHint() == null || section.getHint().isEmpty()){
 				txtSectionHint.setVisibility(TextView.GONE);
-				btnSectionHint.setVisibility(Button.GONE);
 			} else {
+				txtSectionHint.setVisibility(LinearLayout.VISIBLE);
 				txtSectionHint.setText(section.getHint());
-				if(cheat){
-					btnSectionHint.setVisibility(Button.VISIBLE);
-					btnSectionHint.setOnClickListener(new OnClickListener() {
+			}
+			ImageView imgSectionQuestion = (ImageView) sectionView.findViewById(R.id.img_section_question);
+			if(Constants.FILE_TYPE_IMG.equals(section.getType())){
+				imgSectionQuestion.setVisibility(ImageView.VISIBLE);	
+				
+				if(section.getImg() !=  null && section.getImg().getPathLocal() != null && new File(section.getImg().getPathLocal()).exists()){
+					imgSectionQuestion.setImageBitmap(ImageUtils.decodeSampledBitmapFromFile(section.getImg().getPathLocal(), 300, 300));
+				} else {
+					// set default image;
+					imgSectionQuestion.setImageBitmap(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.image_unknown));
+					
+					imgSectionQuestion.setOnClickListener(new OnClickListener() {
 						
 						@Override
 						public void onClick(View v) {
-							if(txtSectionHint.getVisibility() == TextView.VISIBLE){
-								txtSectionHint.setVisibility(TextView.GONE);
-								btnSectionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-							} else {
-								txtSectionHint.setVisibility(TextView.VISIBLE);
-								btnSectionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
-							}
+							showDownloadDialog(section.getImg());
 						}
 					});
-					if(isShowHint){
-						txtSectionHint.setVisibility(LinearLayout.VISIBLE);
-						btnSectionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);					
-					} else {
-						txtSectionHint.setVisibility(LinearLayout.GONE);
-						btnSectionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-					}					
-				} else {
-					btnSectionHint.setVisibility(Button.GONE);
-					txtSectionHint.setVisibility(LinearLayout.GONE);
-				}
-				
-				
-			}
-			
+				}				
+			} else {
+				imgSectionQuestion.setVisibility(ImageView.GONE);	
+			}				
 			
 			List<QuestionDataSet> questions = section.getQuestions();
 			String txt = "";
@@ -169,51 +155,41 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 					TextView txtQuestionTxt = (TextView) questionView.findViewById(R.id.txt_question_txt);
 					ImageView imgQuestion = (ImageView) questionView.findViewById(R.id.img_question);					
 					
-					final Button btnQuestionHint = (Button) questionView.findViewById(R.id.btn_question_hint);
-					final LinearLayout layoutQuestionHint = (LinearLayout) questionView.findViewById(R.id.layout_question_hint);
+					//final LinearLayout layoutQuestionHint = (LinearLayout) questionView.findViewById(R.id.layout_question_hint);
 					if(question.getHint() == null || question.getHint().isEmpty()){
-						btnQuestionHint.setVisibility(Button.GONE);
-						layoutQuestionHint.setVisibility(LinearLayout.GONE);
+						txtQuestionHint.setVisibility(LinearLayout.GONE);
 					} else {
+						txtQuestionHint.setVisibility(LinearLayout.VISIBLE);
 						txtQuestionHint.setText(question.getHint());
-						
-						if(cheat){
-							btnQuestionHint.setVisibility(Button.VISIBLE);
-							if(isShowHint){
-								layoutQuestionHint.setVisibility(LinearLayout.VISIBLE);
-								btnQuestionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);					
-							} else {
-								layoutQuestionHint.setVisibility(LinearLayout.GONE);
-								btnQuestionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-							}
-							btnQuestionHint.setOnClickListener(new OnClickListener() {
-								
-								@Override
-								public void onClick(View v) {
-									
-									if(layoutQuestionHint.getVisibility() == LinearLayout.VISIBLE){
-										layoutQuestionHint.setVisibility(LinearLayout.GONE);
-										btnQuestionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-									} else {
-										layoutQuestionHint.setVisibility(LinearLayout.VISIBLE);
-										btnQuestionHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
-									}
-								}
-							});							
-						} else {
-							btnQuestionHint.setVisibility(Button.GONE);
-							layoutQuestionHint.setVisibility(LinearLayout.GONE);
-						}
-
-												
 					}
-					
+						
 					
 					txt = question.getText();
+					txtQuestionTxt.setVisibility(TextView.VISIBLE);
 					if( txt != null && !txt.isEmpty()){
 						txtQuestionTxt.setText(txt + " (" + question.getMark() + "점)");
 					} else {
 						txtQuestionTxt.setText("(" + question.getMark() + "점)");
+					}
+					
+					if(Constants.FILE_TYPE_IMG.equals(question.getType())){
+						imgQuestion.setVisibility(ImageView.VISIBLE);	
+						if(question.getImg() !=  null && question.getImg().getPathLocal() != null && new File(question.getImg().getPathLocal()).exists()){
+							imgQuestion.setImageBitmap(ImageUtils.decodeSampledBitmapFromFile(question.getImg().getPathLocal(), 300, 300));
+						} else {
+							// set default image;
+							imgQuestion.setImageBitmap(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.image_unknown));
+							
+							imgQuestion.setOnClickListener(new OnClickListener() {
+								
+								@Override
+								public void onClick(View v) {
+									showDownloadDialog(question.getImg());
+								}
+							});
+						}	
+					} else {
+						imgQuestion.setVisibility(ImageView.GONE);
 					}
 					
 					

@@ -212,7 +212,7 @@ public class QuestionActivity extends FragmentActivity{
 			clock = (DigitalClockView) findViewById(R.id.clock);
 			Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/digital-7.ttf");
 			clock.setTypeface(tf);
-			clock.start(level.getTime(), this);
+			clock.start(level.getTime() * 60 * 1000, this);
 			//RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 			//clock.setLayoutParams(layoutParams);
 			

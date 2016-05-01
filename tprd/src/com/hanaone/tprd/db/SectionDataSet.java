@@ -15,6 +15,8 @@ public class SectionDataSet implements Parcelable, Pojo {
 	protected String text;
 	protected String hint;
 	protected List<QuestionDataSet> questions;
+	protected String type;
+	protected FileDataSet img;
 	public SectionDataSet() {
 
 	}	
@@ -48,6 +50,19 @@ public class SectionDataSet implements Parcelable, Pojo {
 	public void setHint(String hint) {
 		this.hint = hint;
 	}
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public FileDataSet getImg() {
+		return img;
+	}
+	public void setImg(FileDataSet img) {
+		this.img = img;
+	}
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -62,6 +77,8 @@ public class SectionDataSet implements Parcelable, Pojo {
 		dest.writeString(text);
 		dest.writeString(hint);
 		dest.writeTypedList(questions);
+		dest.writeString(type);
+		dest.writeParcelable(img, flags);
 		
 	}
 	public static final Parcelable.Creator<SectionDataSet> CREATOR
@@ -88,6 +105,9 @@ public class SectionDataSet implements Parcelable, Pojo {
 		
 		questions = new ArrayList<QuestionDataSet>();
 		in.readTypedList(questions, QuestionDataSet.CREATOR);
+		
+		type = in.readString();
+		img = in.readParcelable(FileDataSet.class.getClassLoader());
 	}
 	@Override
 	public Section toModel() {
@@ -96,7 +116,7 @@ public class SectionDataSet implements Parcelable, Pojo {
 		section.setNumber(number);
 		section.setText(text);
 		section.setHint(hint);
-		
+		section.setType(type);
 		return section;
 	}		
 }

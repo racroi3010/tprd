@@ -22,6 +22,7 @@ import com.hanaone.tprd.db.model.FileExtra;
 import com.hanaone.tprd.db.model.Question;
 import com.hanaone.tprd.db.model.Section;
 import com.hanaone.tprd.util.Config;
+import com.hanaone.tprd.util.DatabaseUtils;
 
 public class DatabaseAdapter{
 	private Context mContext;
@@ -40,13 +41,13 @@ public class DatabaseAdapter{
 		}
 		List<ExamDataSet> list = new ArrayList<ExamDataSet>();
 		for(Examination exam: examModels){
-			ExamDataSet data = exam.toPojo();
+			ExamDataSet data = (ExamDataSet) DatabaseUtils.model2Pojo(exam);
 			List<LevelDataSet> levels = new ArrayList<LevelDataSet>();
 			
 			List<ExamLevel> levelModels = dbHelper.selectExamLevelByExamNumber(exam.getNumber());
 			if(levelModels != null){
 				for(ExamLevel lmodel: levelModels){
-					LevelDataSet l = lmodel.toPojo();
+					LevelDataSet l = (LevelDataSet) DatabaseUtils.model2Pojo(lmodel);
 					
 					l.setId(lmodel.getId());
 					l.setNumber(lmodel.getNumber());
@@ -56,10 +57,10 @@ public class DatabaseAdapter{
 					
 					
 					FileExtra pdf = dbHelper.selectFileById(lmodel.getPdf_id());
-					l.setPdf(pdf.toPojo());	
+					l.setPdf((FileDataSet)DatabaseUtils.model2Pojo(pdf));	
 					
 					FileExtra txt = dbHelper.selectFileById(lmodel.getTxt_id());
-					l.setTxt(txt.toPojo());
+					l.setTxt((FileDataSet)DatabaseUtils.model2Pojo(txt));
 					
 					levels.add(l);
 				}
@@ -83,21 +84,21 @@ public class DatabaseAdapter{
 	}
 	public void addExam(ExamDataSet examDataSet){
 		//Examination exam = DatabaseUtils.examPojo2Model(examDataSet);
-		Examination exam = examDataSet.toModel();		
+		Examination exam = (Examination) DatabaseUtils.pojo2Model(examDataSet);		
 		dbHelper.insert(exam);
 		
 		List<LevelDataSet> levels = examDataSet.getLevels();
 		if(levels != null){
 			for(LevelDataSet data: levels){
 				
-				ExamLevel examLevel = data.toModel();
+				ExamLevel examLevel = (ExamLevel) DatabaseUtils.pojo2Model(data);
 				examLevel.setExam_id(exam.getNumber());
 				examLevel.setNumber(data.getNumber());
 				examLevel.setLabel(data.getLabel());
 
 				
-				examLevel.setPdf_id((int)dbHelper.insert(data.toModel()));
-				examLevel.setTxt_id((int)dbHelper.insert(data.toModel()));
+				examLevel.setPdf_id((int)dbHelper.insert(DatabaseUtils.pojo2Model(data.getPdf())));
+				examLevel.setTxt_id((int)dbHelper.insert(DatabaseUtils.pojo2Model(data.getTxt())));
 				
 				examLevel.setActive(0);
 				
@@ -120,7 +121,7 @@ public class DatabaseAdapter{
 		
 		
 		ExamLevel examLevelModel = dbHelper.selectExamLevelById(levelId);
-		LevelDataSet levelDataSet = examLevelModel.toPojo();
+		LevelDataSet levelDataSet = (LevelDataSet) DatabaseUtils.model2Pojo(examLevelModel);
 		
 		levelDataSet.setNumber(examLevelModel.getNumber());
 		levelDataSet.setLabel(examLevelModel.getLabel());
@@ -130,28 +131,35 @@ public class DatabaseAdapter{
 
 		
 		FileExtra pdf = dbHelper.selectFileById(examLevelModel.getPdf_id());
-		levelDataSet.setPdf(pdf.toPojo());	
+		levelDataSet.setPdf((FileDataSet)DatabaseUtils.model2Pojo(pdf));	
 		
 		FileExtra txt = dbHelper.selectFileById(examLevelModel.getTxt_id());
-		levelDataSet.setTxt(txt.toPojo());	
+		levelDataSet.setTxt((FileDataSet)DatabaseUtils.model2Pojo(txt));	
 		
 		List<Section> sections = dbHelper.selectSectionByExamLevelId(examLevelModel.getId());
 		List<SectionDataSet> sectiondatas = new ArrayList<SectionDataSet>();
 		for(Section section:sections){
-			SectionDataSet sectionData = section.toPojo();
-			
+			SectionDataSet sectionData = (SectionDataSet) DatabaseUtils.model2Pojo(section);
+			if(Constants.FILE_TYPE_IMG.equals(sectionData.getType())){
+				FileExtra imgFile = dbHelper.selectFileById(section.getImg_id());
+				sectionData.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgFile));
+			}
 			List<Question> questionModels = dbHelper.selectQuestionBySectionId(section.getId());
 			List<QuestionDataSet> questionDatas = new ArrayList<QuestionDataSet>();
 			for(Question questionModel: questionModels){
-				QuestionDataSet questionData = questionModel.toPojo();
+				QuestionDataSet questionData = (QuestionDataSet) DatabaseUtils.model2Pojo(questionModel);
+				if(Constants.FILE_TYPE_IMG.equals(questionData.getType())){
+					FileExtra imgFile = this.dbHelper.selectFileById(questionModel.getImg_id());
+					questionData.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgFile));
+				}
 				List<Choice> choiceModels = dbHelper.selectChoiceByQuestionId(questionModel.getId());
 				List<ChoiceDataSet> choiceDatas = new ArrayList<ChoiceDataSet>();
 				for(Choice choiceModel: choiceModels){
-					ChoiceDataSet choice = choiceModel.toPojo();
+					ChoiceDataSet choice = (ChoiceDataSet) DatabaseUtils.model2Pojo(choiceModel);
 					if(Constants.FILE_TYPE_IMG.equals(choice.getType())){
 						FileExtra imgModel = this.dbHelper.selectFileById(choiceModel.getFile_id());
 						if(imgModel != null){
-							choice.setImg(imgModel.toPojo());	
+							choice.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgModel));	
 						} else {
 							choice.setImg(new FileDataSet());
 						}
@@ -226,27 +234,38 @@ public class DatabaseAdapter{
 		return -1;		
 	}
 	public void addSection(SectionDataSet data, int levelId){
-		Section model = data.toModel();
-		model.setExam_level_id(levelId);	
+		Section model = (Section) DatabaseUtils.pojo2Model(data);
+		model.setExam_level_id(levelId);
+		if(Constants.FILE_TYPE_IMG.equals(model.getType())){
+			FileDataSet imgFile = data.getImg();
+			long imgId = dbHelper.insert(DatabaseUtils.pojo2Model(imgFile));
+			model.setImg_id((int)imgId);
+		}		
+		
 		long sectionId = dbHelper.insert(model);
 		
 		
 		List<QuestionDataSet> questions = data.getQuestions();
 		for(QuestionDataSet questionData: questions){
-			Question questionModel = questionData.toModel();
+			Question questionModel = (Question) DatabaseUtils.pojo2Model(questionData);
 			questionModel.setSection_id((int)sectionId);
+			if(Constants.FILE_TYPE_IMG.equals(questionData.getType())){
+				FileExtra imgFile = (FileExtra) DatabaseUtils.pojo2Model(questionData.getImg());
+				long imgId = dbHelper.insert(imgFile);
+				questionModel.setImg_id((int) imgId);
+			}			
 			long questionId = dbHelper.insert(questionModel);
 			
 			List<ChoiceDataSet> choiceDatas = questionData.getChoices();
 			for(ChoiceDataSet choiceData: choiceDatas){
-				Choice choice = choiceData.toModel();
+				Choice choice = (Choice) DatabaseUtils.pojo2Model(choiceData);
 				choice.setQuestion_id((int)questionId);
 				
 				
 				
 				if(Constants.FILE_TYPE_IMG.equals(choiceData.getType())){
 					FileDataSet img = choiceData.getImg();
-					FileExtra imgModel = img.toModel();
+					FileExtra imgModel = (FileExtra) DatabaseUtils.pojo2Model(img);
 					long fileId = dbHelper.insert(imgModel);
 					choice.setFile_id((int)fileId);
 				}
@@ -303,15 +322,18 @@ public class DatabaseAdapter{
 				int rdIdx = random.nextInt(questionModels.size());
 				
 				Question questionModel = questionModels.get(rdIdx);
-				QuestionDataSet questionDataset = questionModel.toPojo();			
-				
+				QuestionDataSet questionDataset = (QuestionDataSet) DatabaseUtils.model2Pojo(questionModel);			
+				if(Constants.FILE_TYPE_IMG.equals(questionDataset.getType())){
+					FileExtra imgFile = this.dbHelper.selectFileById(questionModel.getImg_id());
+					questionDataset.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgFile));
+				}		
 				List<Choice> choiceModels = this.dbHelper.selectChoiceByQuestionId(questionModel.getId());
 				List<ChoiceDataSet> choiceDataset = new ArrayList<ChoiceDataSet>();
 				for(Choice choiceModel: choiceModels){
-					ChoiceDataSet choice = choiceModel.toPojo();
+					ChoiceDataSet choice = (ChoiceDataSet) DatabaseUtils.model2Pojo(choiceModel);
 					if(Constants.FILE_TYPE_IMG.equals(choice.getType())){
 						FileExtra imgModel = this.dbHelper.selectFileById(choiceModel.getFile_id());
-						choice.setImg(imgModel.toPojo());						
+						choice.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgModel));						
 					}
 					
 					choiceDataset.add(choice);											
@@ -320,8 +342,11 @@ public class DatabaseAdapter{
 				questionDataset.setChoices(choiceDataset);				
 				questionDatasets.add(questionDataset);
 				
-				section = sectionModel.toPojo();
-				
+				section = (SectionDataSet) DatabaseUtils.model2Pojo(sectionModel);
+				if(Constants.FILE_TYPE_IMG.equals(section.getType())){
+					FileExtra imgFile = dbHelper.selectFileById(sectionModel.getImg_id());
+					section.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgFile));
+				}	
 				section.setQuestions(questionDatasets);	
 				
 				
@@ -338,20 +363,26 @@ public class DatabaseAdapter{
 			if(sectionModels != null && sectionModels.size() >  0){
 				int rdIdx = random.nextInt(sectionModels.size());
 				Section sectionModel = sectionModels.get(rdIdx);			
-				SectionDataSet section = sectionModel.toPojo();
-				
+				SectionDataSet section = (SectionDataSet) DatabaseUtils.model2Pojo(sectionModel);
+				if(Constants.FILE_TYPE_IMG.equals(section.getType())){
+					FileExtra imgFile = dbHelper.selectFileById(sectionModel.getImg_id());
+					section.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgFile));
+				}				
 				List<Question> questionModels = this.dbHelper.selectQuestionBySectionId(sectionModel.getId());
 				List<QuestionDataSet> questionDatasets = new ArrayList<QuestionDataSet>();
 				for(Question questionModel: questionModels){
-					QuestionDataSet questionDataset = questionModel.toPojo();
-					
+					QuestionDataSet questionDataset = (QuestionDataSet) DatabaseUtils.model2Pojo(questionModel);
+					if(Constants.FILE_TYPE_IMG.equals(questionDataset.getType())){
+						FileExtra imgFile = this.dbHelper.selectFileById(questionModel.getImg_id());
+						questionDataset.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgFile));
+					}						
 					List<Choice> choiceModels = this.dbHelper.selectChoiceByQuestionId(questionModel.getId());
 					List<ChoiceDataSet> choiceDataset = new ArrayList<ChoiceDataSet>();
 					for(Choice choiceModel: choiceModels){
-						ChoiceDataSet choice = choiceModel.toPojo();
+						ChoiceDataSet choice = (ChoiceDataSet) DatabaseUtils.model2Pojo(choiceModel);
 						if(Constants.FILE_TYPE_IMG.equals(choice.getType())){
 							FileExtra imgModel = this.dbHelper.selectFileById(choiceModel.getFile_id());
-							choice.setImg(imgModel.toPojo());						
+							choice.setImg((FileDataSet)DatabaseUtils.model2Pojo(imgModel));						
 						}
 						
 						choiceDataset.add(choice);
@@ -383,7 +414,7 @@ public class DatabaseAdapter{
 	}
 	public int updateFile(FileDataSet file){
 		if(file == null) return -1;
-		FileExtra fileModel = file.toModel();
+		FileExtra fileModel = (FileExtra) DatabaseUtils.pojo2Model(file);
 		if(fileModel != null){
 			return this.dbHelper.update(fileModel);
 		}

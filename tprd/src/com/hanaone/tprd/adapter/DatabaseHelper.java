@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.hanaone.tprd.db.model.Choice;
+import com.hanaone.tprd.db.model.Model;
 import com.hanaone.tprd.db.model.Choice.ChoiceEntry;
 import com.hanaone.tprd.db.model.ExamLevel;
 import com.hanaone.tprd.db.model.ExamLevel.ExamLevelEntry;
@@ -74,6 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ QuestionEntry.COLUMN_NAME_TYPE + TEXT_TYPE + COMMA_STEP
 			+ QuestionEntry.COLUMN_NAME_HINT + TEXT_TYPE + COMMA_STEP
 			+ QuestionEntry.COLUMN_NAME_SECTION_ID + INTEGER_TYPE + COMMA_STEP
+			+ QuestionEntry.COLUMN_NAME_IMG_ID + INTEGER_TYPE + COMMA_STEP			
 			+ FOREIGN_KEY + " (" + QuestionEntry.COLUMN_NAME_SECTION_ID + ") REFERENCES " + SectionEntry.TABLE_NAME + "(" + SectionEntry._ID + ")"
 			+ ")";	
 	private static final String CREATE_TABLE_SECTION = 
@@ -83,7 +85,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			+ SectionEntry.COLUMN_NAME_TEXT + TEXT_TYPE + COMMA_STEP
 			+ SectionEntry.COLUMN_NAME_HINT + TEXT_TYPE + COMMA_STEP
 			+ SectionEntry.COLUMN_NAME_EXAM_LEVEL_ID + INTEGER_TYPE + COMMA_STEP
-			+ FOREIGN_KEY + " (" + SectionEntry.COLUMN_NAME_EXAM_LEVEL_ID + ") REFERENCES " + ExamLevelEntry.TABLE_NAME + "(" + ExamLevelEntry._ID + ")"
+			+ SectionEntry.COLUMN_NAME_TYPE + TEXT_TYPE + COMMA_STEP
+			+ SectionEntry.COLUMN_NAME_IMG_ID + INTEGER_TYPE + COMMA_STEP
+			+ FOREIGN_KEY + " (" + SectionEntry.COLUMN_NAME_EXAM_LEVEL_ID + ") REFERENCES " + ExamLevelEntry.TABLE_NAME + "(" + ExamLevelEntry._ID + ")" + COMMA_STEP
+			+ FOREIGN_KEY + " (" + SectionEntry.COLUMN_NAME_IMG_ID + ") REFERENCES " + FileExtraEntry.TABLE_NAME + "(" + FileExtraEntry._ID + ")"
 			+ ")";		
 	
 	private static final String CREATE_TABLE_EXAM_LEVEL = 
@@ -160,7 +165,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 	
-	protected long insert(Object obj){		
+	protected long insert(Model obj){		
 		long rowId = -1;
 		if(obj == null) return rowId;
 		ContentValues values  = null;
@@ -198,7 +203,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			values.put(SectionEntry.COLUMN_NAME_NUMBER, section.getNumber());
 			values.put(SectionEntry.COLUMN_NAME_TEXT, section.getText());	
 			values.put(SectionEntry.COLUMN_NAME_HINT, section.getHint());	
-			values.put(SectionEntry.COLUMN_NAME_EXAM_LEVEL_ID, section.getExam_level_id());	
+			values.put(SectionEntry.COLUMN_NAME_EXAM_LEVEL_ID, section.getExam_level_id());
+			values.put(SectionEntry.COLUMN_NAME_TYPE, section.getType());
+			values.put(SectionEntry.COLUMN_NAME_IMG_ID, section.getImg_id());
 		} else if(obj instanceof FileExtra){
 			FileExtra file = (FileExtra) obj;
 			
@@ -220,7 +227,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			values.put(QuestionEntry.COLUMN_NAME_ANSWER, question.getAnswer());	
 			values.put(QuestionEntry.COLUMN_NAME_TYPE, question.getType());	
 			values.put(QuestionEntry.COLUMN_NAME_HINT, question.getHint());	
-			values.put(QuestionEntry.COLUMN_NAME_SECTION_ID, question.getSection_id());		
+			values.put(QuestionEntry.COLUMN_NAME_SECTION_ID, question.getSection_id());	
+			values.put(QuestionEntry.COLUMN_NAME_IMG_ID, question.getImg_id());
 		} else if(obj instanceof Choice){
 			Choice choice = (Choice) obj;
 			
@@ -290,6 +298,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			values.put(SectionEntry.COLUMN_NAME_TEXT, section.getText());	
 			values.put(SectionEntry.COLUMN_NAME_HINT, section.getHint());	
 			values.put(SectionEntry.COLUMN_NAME_EXAM_LEVEL_ID, section.getExam_level_id());	
+			values.put(SectionEntry.COLUMN_NAME_TYPE, section.getType());
+			values.put(SectionEntry.COLUMN_NAME_IMG_ID, section.getImg_id());
 		} else if(obj instanceof FileExtra){
 			FileExtra file = (FileExtra) obj;
 			
@@ -317,7 +327,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			values.put(QuestionEntry.COLUMN_NAME_ANSWER, question.getAnswer());	
 			values.put(QuestionEntry.COLUMN_NAME_TYPE, question.getType());	
 			values.put(QuestionEntry.COLUMN_NAME_HINT, question.getHint());
-			values.put(QuestionEntry.COLUMN_NAME_SECTION_ID, question.getSection_id());		
+			values.put(QuestionEntry.COLUMN_NAME_SECTION_ID, question.getSection_id());	
+			values.put(QuestionEntry.COLUMN_NAME_IMG_ID, question.getImg_id());
 		} else if(obj instanceof Choice){
 			Choice choice = (Choice) obj;
 			
@@ -411,13 +422,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			examLevel.setExam_id(c.getInt(1));
 			examLevel.setNumber(c.getInt(2));
 			examLevel.setLabel(c.getString(3));
-			examLevel.setPdf_id(c.getInt(5));
-			examLevel.setTxt_id(c.getInt(6));
-			examLevel.setScore(c.getInt(7));
-			examLevel.setMaxScore(c.getInt(8));
-			examLevel.setActive(c.getInt(9));
-			examLevel.setColor(c.getInt(10));
+			examLevel.setPdf_id(c.getInt(4));
+			examLevel.setTxt_id(c.getInt(5));
+			examLevel.setScore(c.getInt(6));
+			examLevel.setMaxScore(c.getInt(7));
+			examLevel.setActive(c.getInt(8));
+			examLevel.setColor(c.getInt(9));
 			examLevel.setTime(c.getInt(10));
+			
 			list.add(examLevel);
 		} while(c.moveToNext());
 			
@@ -504,7 +516,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			section.setText(c.getString(2));
 			section.setHint(c.getString(3));
 			section.setExam_level_id(c.getInt(4));
-			
+			section.setType(c.getString(5));
+			section.setImg_id(c.getInt(6));
 			list.add(section);
 		} while(c.moveToNext());
 			
@@ -532,7 +545,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		section.setText(c.getString(2));
 		section.setHint(c.getString(3));
 		section.setExam_level_id(c.getInt(4));
-		
+		section.setType(c.getString(5));
+		section.setImg_id(c.getInt(6));		
 		return section;
 	}
 	public List<Question> selectQuestionBySectionId(int sectionId){
@@ -557,7 +571,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			question.setAnswer(c.getInt(4));
 			question.setType(c.getString(5));
 			question.setHint(c.getString(6));
-			question.setSection_id(c.getInt(7));			
+			question.setSection_id(c.getInt(7));	
+			question.setImg_id(c.getInt(8));
 			list.add(question);
 		} while(c.moveToNext());
 			
@@ -587,7 +602,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		question.setType(c.getString(5));
 		question.setHint(c.getString(6));
 		question.setSection_id(c.getInt(7));
-		
+		question.setImg_id(c.getInt(8));
 		return question;
 	}
 	public List<Choice> selectChoiceByQuestionId(int questionId){
@@ -649,7 +664,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			question.setType(c.getString(5));
 			question.setHint(c.getString(6));
 			question.setSection_id(c.getInt(7));	
-			
+			question.setImg_id(c.getInt(8));
 			list.add(question);
 		} while(c.moveToNext());
 			
@@ -682,7 +697,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			section.setId(c.getInt(0));
 			section.setNumber(c.getInt(1));
 			section.setText(c.getString(2));
-			section.setHint(c.getString(4));
+			section.setHint(c.getString(3));
 			section.setExam_level_id(c.getInt(4));	
 			
 			list.add(section);

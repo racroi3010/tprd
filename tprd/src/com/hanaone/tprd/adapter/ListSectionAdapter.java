@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,21 +35,13 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 	private ListAdapterListener mListener;
 	private List<SectionDataSet> mDataSet;
 	private List<Item> mItems;
-	//private ArrayList<ResultDataSet> mResults;
-	private boolean cheat;
-	private boolean isShowHint;
+
 	public ListSectionAdapter(Context mContext, ListAdapterListener mListener) {
 		this.mContext = mContext;
 		this.mListener = mListener;
 		this.mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
 		String mode = PreferenceHandler.getQuestionModePreference(mContext);
-		cheat = false;
-		if(Constants.QUESTION_MODE_PRACTICE.equals(mode) 
-				|| Constants.QUESTION_MODE_REVIEW.equals(mode)){
-			isShowHint = PreferenceHandler.getHintDisplayPreference(mContext);
-			cheat = true;
-		}
 		
 
 	}
@@ -140,8 +133,7 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 				holder = new SectionViewHolder();
 				holder.txtQuestion = (TextView) convertView.findViewById(R.id.txt_section_question);
 				holder.txtHint = (TextView) convertView.findViewById(R.id.txt_section_hint);
-				holder.btnHint = (Button) convertView.findViewById(R.id.btn_section_hint);
-
+				holder.imgQuestion = (ImageView) convertView.findViewById(R.id.img_section_question);
 				
 				convertView.setTag(holder);
 			} else {
@@ -154,37 +146,31 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 			// fill data
 			if(section.getHint() == null || section.getHint().isEmpty()){
 				holder.txtHint.setVisibility(TextView.GONE);
-				holder.btnHint.setVisibility(Button.GONE);
 			} else {
+				holder.txtHint.setVisibility(TextView.VISIBLE);
 				holder.txtHint.setText(section.getHint());
-				if(cheat){
-					holder.btnHint.setVisibility(Button.VISIBLE);
-					holder.btnHint.setOnClickListener(new OnClickListener() {
+			}	
+			if(Constants.FILE_TYPE_IMG.equals(section.getType())){
+				holder.imgQuestion.setVisibility(ImageView.VISIBLE);	
+				
+				if(section.getImg() !=  null && section.getImg().getPathLocal() != null && new File(section.getImg().getPathLocal()).exists()){
+					holder.imgQuestion.setImageBitmap(ImageUtils.decodeSampledBitmapFromFile(section.getImg().getPathLocal(), 300, 300));
+				} else {
+					// set default image;
+					holder.imgQuestion.setImageBitmap(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.image_unknown));
+					
+					holder.imgQuestion.setOnClickListener(new OnClickListener() {
 						
 						@Override
 						public void onClick(View v) {
-							if(holder.txtHint.getVisibility() == TextView.VISIBLE){
-								holder.txtHint.setVisibility(TextView.GONE);
-								holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-							} else {
-								holder.txtHint.setVisibility(TextView.VISIBLE);
-								holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
-							}
+							showDownloadDialog(section.getImg());
 						}
 					});
-					if(isShowHint){
-						holder.txtHint.setVisibility(LinearLayout.VISIBLE);
-						holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);					
-					} else {
-						holder.txtHint.setVisibility(LinearLayout.GONE);
-						holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-					}							
-				} else {
-					holder.btnHint.setVisibility(Button.GONE);
-					holder.txtHint.setVisibility(LinearLayout.GONE);
-				}
-		
-			}		
+				}				
+			} else {
+				holder.imgQuestion.setVisibility(ImageView.GONE);	
+			}			
+			
 			List<QuestionDataSet> questions = section.getQuestions();
 
 			String txt = "";
@@ -202,8 +188,8 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 		
 		private class SectionViewHolder{
 			TextView txtQuestion;
-			Button btnHint;
-			TextView txtHint;	
+			TextView txtHint;
+			ImageView imgQuestion;
 		}
 	}
 	public class QuestionItem implements Item{
@@ -260,9 +246,7 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 				holder.imgChoices.add((ImageView) convertView.findViewById(R.id.img_question_choice_3));
 				holder.imgChoices.add((ImageView) convertView.findViewById(R.id.img_question_choice_4));
 				
-				
-				holder.btnHint = (Button) convertView.findViewById(R.id.btn_question_hint);
-				holder.layoutHint = (LinearLayout) convertView.findViewById(R.id.layout_question_hint);
+				//holder.layoutHint = (LinearLayout) convertView.findViewById(R.id.layout_question_hint);
 				
 				
 				convertView.setTag(holder);
@@ -280,50 +264,41 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 			}	
 			
 			if(question.getHint() == null || question.getHint().isEmpty()){
-				holder.btnHint.setVisibility(Button.GONE);
-				holder.layoutHint.setVisibility(LinearLayout.GONE);
+				holder.txtHint.setVisibility(LinearLayout.GONE);
 			} else {
+				holder.txtHint.setVisibility(LinearLayout.VISIBLE);
 				holder.txtHint.setText(question.getHint());
-				
-				if(cheat){
-					holder.btnHint.setVisibility(Button.VISIBLE);
-					if(isShowHint){
-						holder.layoutHint.setVisibility(LinearLayout.VISIBLE);
-						holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);	
-						
-					} else {
-						holder.layoutHint.setVisibility(LinearLayout.GONE);
-						holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-					}
-					holder.btnHint.setOnClickListener(new OnClickListener() {
-						
-						@Override
-						public void onClick(View v) {
-							
-							if(holder.layoutHint.getVisibility() == LinearLayout.VISIBLE){
-								holder.layoutHint.setVisibility(LinearLayout.GONE);
-								holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_black);
-							} else {
-								holder.layoutHint.setVisibility(LinearLayout.VISIBLE);
-								holder.btnHint.setBackgroundResource(R.drawable.ic_image_wb_sunny_cyan);
-							}
-						}
-					});					
-				} else {
-					holder.btnHint.setVisibility(Button.GONE);
-					holder.layoutHint.setVisibility(LinearLayout.GONE);
-				}
-
-
 										
 			}
 			
+			holder.txtQuestion.setVisibility(TextView.VISIBLE);
 			String questionTxt = question.getText(); 
 			if(questionTxt != null && !questionTxt.isEmpty()){
 				holder.txtQuestion.setText(questionTxt + " (" + question.getMark() + "점)");
 			} else {
 				holder.txtQuestion.setText("(" + question.getMark() + "점)");
+			}			
+			if(Constants.FILE_TYPE_IMG.equals(question.getType())){
+				holder.imgQuestion.setVisibility(ImageView.VISIBLE);	
+				
+				if(question.getImg() !=  null && question.getImg().getPathLocal() != null && new File(question.getImg().getPathLocal()).exists()){
+					holder.imgQuestion.setImageBitmap(ImageUtils.decodeSampledBitmapFromFile(question.getImg().getPathLocal(), 300, 300));
+				} else {
+					// set default image;
+					holder.imgQuestion.setImageBitmap(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.image_unknown));
+					
+					holder.imgQuestion.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							showDownloadDialog(question.getImg());
+						}
+					});
+				}				
+			} else {
+				holder.imgQuestion.setVisibility(ImageView.GONE);	
 			}
+
 			
 			
 			holder.txtNumber.setText(question.getNumber() + ". ");
@@ -406,8 +381,7 @@ public class ListSectionAdapter extends BaseAdapter implements DownloadListener{
 			TextView txtNumber;
 			TextView txtQuestion;
 			ImageView imgQuestion;
-			Button btnHint;
-			LinearLayout layoutHint;
+			//LinearLayout layoutHint;
 			TextView txtHint;		
 			List<Button> btnChoices;
 			List<TextView> txtChoices;

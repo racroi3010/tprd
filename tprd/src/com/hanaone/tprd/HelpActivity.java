@@ -94,16 +94,6 @@ public class HelpActivity extends Activity {
 		setContentView(R.layout.activity_help);
 
 
-		SwitchButton swHint = (SwitchButton) findViewById(R.id.sw_help_hint);
-		swHint.setChecked(PreferenceHandler.getHintDisplayPreference(mContext));
-		swHint.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView,
-					boolean isChecked) {
-				PreferenceHandler.setHintDisplayPreference(mContext, isChecked);
-			}
-		});
 
 		spLanguage = (Spinner) findViewById(R.id.sp_language);
 

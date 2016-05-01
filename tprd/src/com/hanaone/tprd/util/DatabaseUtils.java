@@ -4,6 +4,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
+import com.hanaone.tprd.db.Pojo;
+import com.hanaone.tprd.db.model.Model;
+
 public class DatabaseUtils {
 	
 //	public static <T, S> S convertObject(T model, Class<S> c){
@@ -43,4 +46,12 @@ public class DatabaseUtils {
 //		return null;
 //		
 //	}
+	public static Model pojo2Model(Pojo pojo){
+		if(pojo == null) return null;
+		return pojo.toModel();
+	}
+	public static Pojo model2Pojo(Model model){
+		if(model == null) return null;
+		return model.toPojo();
+	}
 }

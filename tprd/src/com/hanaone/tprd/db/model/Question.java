@@ -13,6 +13,7 @@ public class Question implements Model {
 	protected int answer;
 	protected String type;
 	protected String hint;	
+	protected int img_id;
 	public int getId() {
 		return id;
 	}
@@ -80,6 +81,15 @@ public class Question implements Model {
 	}
 
 
+	public int getImg_id() {
+		return img_id;
+	}
+
+	public void setImg_id(int img_id) {
+		this.img_id = img_id;
+	}
+
+
 	public static abstract class QuestionEntry implements BaseColumns{
 		public static final String TABLE_NAME = "question";
 		public static final String COLUMN_NAME_NUMBER = "number";
@@ -89,6 +99,7 @@ public class Question implements Model {
 		public static final String COLUMN_NAME_TYPE = "type";
 		public static final String COLUMN_NAME_HINT = "hint";
 		public static final String COLUMN_NAME_SECTION_ID = "section_id";
+		public static final String COLUMN_NAME_IMG_ID = "img_id";
 	}
 
 	@Override

@@ -20,6 +20,7 @@ public class QuestionDataSet implements Parcelable, Pojo{
 	protected String type;
 
 	protected String hint;
+	protected FileDataSet img;
 	public QuestionDataSet() {
 		choice = -1;
 	}	
@@ -79,6 +80,12 @@ public class QuestionDataSet implements Parcelable, Pojo{
 		this.choice = choice;
 	}
 	
+	public FileDataSet getImg() {
+		return img;
+	}
+	public void setImg(FileDataSet img) {
+		this.img = img;
+	}
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -98,6 +105,7 @@ public class QuestionDataSet implements Parcelable, Pojo{
 		dest.writeInt(choice);
 		dest.writeString(type);
 		dest.writeString(hint);
+		dest.writeParcelable(img, flags);
 		
 	}
 	public static final Parcelable.Creator<QuestionDataSet> CREATOR
@@ -129,6 +137,7 @@ public class QuestionDataSet implements Parcelable, Pojo{
 		choice = in.readInt();
 		type = in.readString();
 		hint = in.readString();
+		img = in.readParcelable(FileDataSet.class.getClassLoader());
 	}
 	@Override
 	public Question toModel() {
@@ -140,6 +149,7 @@ public class QuestionDataSet implements Parcelable, Pojo{
 		question.setAnswer(answer);
 		question.setType(type);
 		question.setHint(hint);	
+
 		return question;
 	}		
 }

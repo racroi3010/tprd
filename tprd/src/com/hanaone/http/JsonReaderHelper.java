@@ -65,13 +65,22 @@ public class JsonReaderHelper {
 	
 	// read question
 	public static List<SectionDataSet> readSections(JsonReader reader) throws IOException{
-		List<SectionDataSet> section = new ArrayList<SectionDataSet>();
+		List<SectionDataSet> sections = new ArrayList<SectionDataSet>();
 		reader.beginArray();
 		while(reader.hasNext()){
-			section.add(readSection(reader));
+			SectionDataSet section = readSection(reader);
+			
+			if(Constants.FILE_TYPE_IMG.equals(section.getType())){
+				FileDataSet img = new FileDataSet();
+				img.setPathRemote(section.getHint());
+				section.setImg(img);
+				section.setHint(null);
+			}
+				
+			sections.add(section);
 		}
 		reader.endArray();
-		return section;		
+		return sections;		
 	}
 	
 	private static SectionDataSet readSection(JsonReader reader) throws IOException{
@@ -86,6 +95,8 @@ public class JsonReaderHelper {
 				section.setText(reader.nextString());
 			} else if(name.equals("section_hint")){
 				section.setHint(reader.nextString());
+			} else if(name.equals("section_type")){
+				section.setType(reader.nextString());				
 			} else if(name.equals("questions")){
 				section.setQuestions(readQuestions(reader));
 			} else {
@@ -101,7 +112,15 @@ public class JsonReaderHelper {
 		List<QuestionDataSet> questions = new ArrayList<QuestionDataSet>();
 		reader.beginArray();
 		while(reader.hasNext()){
-			questions.add(readQuestion(reader));
+			QuestionDataSet question = readQuestion(reader);
+			if(Constants.FILE_TYPE_IMG.equals(question.getType())){
+				FileDataSet img = new FileDataSet();
+				img.setPathRemote(question.getText());
+				question.setImg(img);	
+				question.setText(null);
+			}
+			
+			questions.add(question);
 		}
 		reader.endArray();
 		return questions;
@@ -246,6 +265,8 @@ public class JsonReaderHelper {
 				audios.add(audio);
 			} else if(name.equals("max_score")){
 				data.setMaxScore(reader.nextInt());
+			} else if(name.equals("time")){
+				data.setTime(reader.nextInt());
 			} else {
 				reader.skipValue();
 			}
