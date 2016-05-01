@@ -299,7 +299,8 @@ public class DatabaseAdapter{
 		levelData.setNumber(level);
 		levelData.setLabel(level + "");
 		levelData.setActive(Constants.STATUS_ACTIVE);
-		levelData.setScore(100);		
+		levelData.setScore(100);
+		levelData.setTime(60);
 		
 		List<SectionDataSet> sections = new ArrayList<SectionDataSet>();
 
