@@ -236,7 +236,13 @@ public class QuestionSlideFragment extends Fragment implements DownloadListener 
 							}
 						});
 					}				
-									
+					// check choice
+					Button btn = null;
+					if(question.getChoice() > 0){
+						btn = btnChoices.get(question.getChoice() - 1);
+						btn.setTextColor(getResources().getColor(R.color.WHITE));
+						btn.setBackgroundResource(R.drawable.circle_number_black);
+					}									
 					
 					layoutQuestions.addView(questionView);
 				}
